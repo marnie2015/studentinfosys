@@ -1,17 +1,18 @@
+<div class="container-fluid text-center"><div class="row"><div class="col-sm-10 col-sm-offset-1">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Fname:</strong>
+  <strong>First Name:</strong>
   <%= @student.fname %>
 </p>
 
 <p>
-  <strong>Mname:</strong>
+  <strong>Middle Name:</strong>
   <%= @student.mname %>
 </p>
 
 <p>
-  <strong>Lname:</strong>
+  <strong>Last Name:</strong>
   <%= @student.lname %>
 </p>
 
@@ -62,3 +63,4 @@
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+</div></div></div>

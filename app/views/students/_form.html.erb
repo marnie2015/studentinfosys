@@ -10,56 +10,77 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :fname %><br>
-    <%= f.text_field :fname %>
+  <div class="row">
+    <div class="col-sm-4">
+        <%= f.label "First Name" %>
+        <%= f.text_field :fname, class: "form-control" %>
+    </div>
+    <div class="col-sm-4">
+        <%= f.label "Middle Name" %>
+        <%= f.text_field :mname, class: "form-control" %>
+    </div>
+    <div class="col-sm-4">
+        <%= f.label "Last Name" %>
+        <%= f.text_field :lname, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :mname %><br>
-    <%= f.text_field :mname %>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= f.label :birthdate %>
+      <%= f.date_field :birthdate, class: "form-control" %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.label :gender %>
+      <select class="form-control" name="student[gender]">
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :lname %><br>
-    <%= f.text_field :lname %>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= f.label :contact_1 %>
+      <%= f.text_field :contact_1, class: "form-control" %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.label :contact_2 %>
+      <%= f.text_field :contact_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :birthdate %><br>
-    <%= f.date_select :birthdate %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.label :address_1 %>
+      <%= f.text_field :address_1, class: "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :address_2 %>
+      <%= f.text_field :address_2, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.label :username %>
+      <%= f.text_field :user_name, class: "form-control" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :password %>
+      <%= f.text_field :user_pass, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address_1 %><br>
-    <%= f.text_field :address_1 %>
+  <div class="row">
+    <div class="col-sm-2">
+      <%= f.label :status %>
+      <select class="form-control" name="student[status]">
+        <option>Active</option>
+        <option>Inactive</option>
+      </select>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address_2 %><br>
-    <%= f.text_field :address_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_1 %><br>
-    <%= f.text_field :contact_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_2 %><br>
-    <%= f.text_field :contact_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
-  </div>
-  <div class="field">
-    <%= f.label :user_pass %><br>
-    <%= f.text_field :user_pass %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" type="submit">
+        <span class="glyphicon glyphicon-saved"></span> Save
+      </button>
+    </div>
   </div>
 <% end %>
