@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    autogenerate_id
   end
 
   # GET /students/1/edit
@@ -61,6 +62,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def autogenerate_id
+    year_now = Time.now.year.to_s
+    get_last_student_id = Student.where("student_id ilike ?", year_now + "-AS-%").count + 1
+    @student_id = year_now + "-AS-" + get_last_student_id.to_s.rjust(4, '0')
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -69,6 +76,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address_1, :address_2, :contact_1, :contact_2, :user_name, :user_pass, :status)
+      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address_1, :address_2, :contact_1, :contact_2, :user_name, :user_pass, :status, :student_id)
     end
 end

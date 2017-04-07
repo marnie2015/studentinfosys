@@ -2,10 +2,31 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <p id="notice"><%= notice %></p>
-            <h1>Listing Students
-              <a class="btn btn-primary pull-right" href="/students/new">
-                <span class="glyphicon glyphicon-plus"></span> Add Student</a>
-            </h1>
+            
+            <div class="row page-header" style="margin-bottom: 10px;">
+              <div class="col-sm-3">
+               <label>Search by:</label>
+                <select class="form-control">
+                  <option>First Name</option>
+                  <option>Last Name</option>
+                  <option>Year Level</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label>Search text:</label>
+                <input type="text" class="form-control" name="txt_search">
+              </div>
+              <div class="col-sm-2" style="margin-top: 25px;">
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+              </div>
+              <div class="col-sm-4" style="margin-top: 25px;">
+                  <a class="btn btn-primary pull-right" href="/students/new">
+                    <span class="glyphicon glyphicon-plus"></span> Add Student
+                  </a>
+              </div>
+            </div>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>

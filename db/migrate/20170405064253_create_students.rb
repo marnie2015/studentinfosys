@@ -13,6 +13,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :user_name
       t.string :user_pass
       t.string :status
+      t.string :student_id
 
       t.timestamps null: false
     end

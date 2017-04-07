@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170405064253) do
     t.string   "user_name"
     t.string   "user_pass"
     t.string   "status"
+    t.string   "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
