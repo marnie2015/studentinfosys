@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'grades/show'
 
+  get 'grades/show'
   resources :students
   get 'payments' => 'payments#index'
-  get 'home/index'
+  get '/main' => 'home#main'
+  root 'home#index'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
