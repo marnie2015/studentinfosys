@@ -16,24 +16,12 @@
         <input class="form-control" type="text" name="student[student_id]" id="student_student_id" value="<%= params[:id] ? @student.student_id : @student_id %>">
     </div>
     <div class="col-sm-2">
-      <label for="student_other_info_year_level">Grade / Year Level</label>
-      <select class="form-control" name="student_other_info[year_level]">
-        <option>Grade 7</option>
-        <option>Grade 8</option>
-        <option>Grade 9</option>
-        <option>Grade 10</option>
-        <option>Grade 11</option>
-        <option>Grade 12</option>
-      </select>
+      <label for="year_level_id">Grade / Year Level</label>
+      <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
     </div>
     <div class="col-sm-2">
       <label for="student_other_info_section">Section</label>
-      <select class="form-control" name="student_other_info[section]">
-        <option>Section 1</option>
-        <option>Section 2</option>
-        <option>Section 3</option>
-        <option>Section 4</option>
-      </select>
+      <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
     </div>
     <div class="col-sm-2">
       <%= f.label :status %>

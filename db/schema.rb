@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405064253) do
+ActiveRecord::Schema.define(version: 20170507054311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sections", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "student_year_sections", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "year_level_id"
+    t.integer  "section_id"
+    t.string   "school_year"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "student_year_sections", ["section_id"], name: "index_student_year_sections_on_section_id", using: :btree
+  add_index "student_year_sections", ["student_id"], name: "index_student_year_sections_on_student_id", using: :btree
+  add_index "student_year_sections", ["year_level_id"], name: "index_student_year_sections_on_year_level_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "fname"
@@ -34,4 +53,13 @@ ActiveRecord::Schema.define(version: 20170405064253) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "year_levels", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_foreign_key "student_year_sections", "sections"
+  add_foreign_key "student_year_sections", "students"
+  add_foreign_key "student_year_sections", "year_levels"
 end
