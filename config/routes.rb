@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'grades/show'
-  resources :students
-  get 'payments' => 'payments#index'
+  get '/grades' => 'grades#index'
+  get '/grades/show'
   get '/main' => 'home#main'
+  get '/payments' => 'payments#index'
+  
+  resources :students
   root 'home#index'
   
 

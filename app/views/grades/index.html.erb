@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <p id="notice"><%= notice %></p>
+            
+            <div class="row page-header" style="margin-bottom: 10px;">
+              <div class="col-sm-3">
+               <label>Search by:</label>
+                <select class="form-control">
+                  <option>First Name</option>
+                  <option>Last Name</option>
+                  <option>Year Level</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label>Search text:</label>
+                <input type="text" class="form-control" name="txt_search">
+              </div>
+              <div class="col-sm-2" style="margin-top: 25px;">
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+              </div>
+            </div>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Student ID</th>
+                  <th>First name</th>
+                  <th>Middle name</th>
+                  <th>Last name</th>
+                  <th>Address 1</th>
+                  <th>Contact 1</th>
+                  <th>Status</th>
+                  <th colspan="2"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @students.each do |student| %>
+                  <tr>
+                    <td><%= student.student_id %></td>
+                    <td><%= student.fname %></td>
+                    <td><%= student.mname %></td>
+                    <td><%= student.lname %></td>
+                    <td><%= student.address_1 %></td>
+                    <td><%= student.contact_1 %></td>
+                    <td><%= student.status %></td>
+                    <td><%= link_to "/grades/show", :class => "btn btn-primary btn-sm" do %>
+                          <span class="glyphicon glyphicon-eye-open"></span> View Grades
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= link_to "/grades/show", :class => "btn btn-primary btn-sm" do %>
+                          <span class="glyphicon glyphicon-pencil"></span> Edit Grades
+                        <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <br>
+            <div class="row text-center">
+              <%= will_paginate @students %>
+            </div>
+        </div>
+    </div>
+</div>
