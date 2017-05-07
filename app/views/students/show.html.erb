@@ -1,66 +1,13 @@
-<div class="container-fluid text-center"><div class="row"><div class="col-sm-10 col-sm-offset-1">
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First Name:</strong>
-  <%= @student.fname %>
-</p>
-
-<p>
-  <strong>Middle Name:</strong>
-  <%= @student.mname %>
-</p>
-
-<p>
-  <strong>Last Name:</strong>
-  <%= @student.lname %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @student.birthdate %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @student.gender %>
-</p>
-
-<p>
-  <strong>Address 1:</strong>
-  <%= @student.address_1 %>
-</p>
-
-<p>
-  <strong>Address 2:</strong>
-  <%= @student.address_2 %>
-</p>
-
-<p>
-  <strong>Contact 1:</strong>
-  <%= @student.contact_1 %>
-</p>
-
-<p>
-  <strong>Contact 2:</strong>
-  <%= @student.contact_2 %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @student.user_name %>
-</p>
-
-<p>
-  <strong>User pass:</strong>
-  <%= @student.user_pass %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @student.status %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div id="form-student" class="container-fluid"><div class="row"><div class="col-sm-10 col-sm-offset-1">
+<h1 class="page-header">Student Information 
+    <a class="btn btn-primary pull-right" href="/students">
+    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+</h1>
+<%= render 'form' %>
 </div></div></div>
+<script>
+  $(document).ready(function() {
+    $(".form-control").prop("disabled", true);
+    $("#div-btn-save").hide();
+  });
+</script>
