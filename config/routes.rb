@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :schedules
+  resources :subjects
   get '/grades' => 'grades#index'
   get '/grades/show'
   get '/main' => 'home#main'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year_level_id: 
+  section_id: 
+  school_year: MyString
+  description: MyString
+  schedule: MyString
+
+two:
+  year_level_id: 
+  section_id: 
+  school_year: MyString
+  description: MyString
+  schedule: MyString

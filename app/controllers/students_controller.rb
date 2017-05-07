@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student_year_section = StudentYearSection.where(student_id: @student.id).first
   end
 
   # GET /students/new
@@ -20,6 +21,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    @student_year_section = StudentYearSection.where(student_id: @student.id).first
   end
 
   # POST /students
@@ -29,6 +31,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
+        StudentYearSection.create(student_id: @student.id, year_level_id: params[:year_level][:id], section_id: params[:section][:id])
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else
@@ -43,6 +46,7 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
+        StudentYearSection.where(student_id: @student.id).first.update(year_level_id: params[:year_level][:id], section_id: params[:section][:id])
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
