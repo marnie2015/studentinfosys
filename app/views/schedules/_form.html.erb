@@ -1,37 +1,94 @@
 <%= form_for(@schedule) do |f| %>
-  <% if @schedule.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
-
-      <ul>
-      <% @schedule.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @schedule.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+            <ul>
+                <% @schedule.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div class="row">
+        <div class="col-sm-3">
+            <label>School Year:</label>
+            <select class="form-control">
+                <option>2016-2017</option>
+                <option>2015-2016</option>
+                <option>2014-2015</option>
+            </select>
+        </div>
+        <div class="col-sm-3">
+            <label>Grade:</label>
+            <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
+        </div>
+        <div class="col-sm-3">
+            <label>Section:</label>
+            <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
+        </div>
+        <div class="col-sm-3">
+            <label>Subject:</label>
+            <select class="form-control" name="section[id]" id="section_id">
+                <option value="2">Math</option>
+                <option value="3">Science</option>
+                <option value="4">English</option>
+                <option value="4">Filipino</option>
+            </select>
+        </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :year_level_id %><br>
-    <%= f.text_field :year_level_id %>
-  </div>
-  <div class="field">
-    <%= f.label :section_id %><br>
-    <%= f.text_field :section_id %>
-  </div>
-  <div class="field">
-    <%= f.label :school_year %><br>
-    <%= f.text_field :school_year %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :schedule %><br>
-    <%= f.text_field :schedule %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-2">
+            <input type="checkbox"> Monday
+        </div>
+        <div class="col-sm-2">
+            Start <input type="time">
+        </div>
+        <div class="col-sm-2">
+            End <input type="time">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-2">
+            <input type="checkbox"> Tuesday
+        </div>
+        <div class="col-sm-2">
+            Start <input type="time">
+        </div>
+        <div class="col-sm-2">
+            End <input type="time">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-2">
+            <input type="checkbox"> Wednesday
+        </div>
+        <div class="col-sm-2">
+            Start <input type="time">
+        </div>
+        <div class="col-sm-2">
+            End <input type="time">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-2">
+            <input type="checkbox"> Thursday
+        </div>
+        <div class="col-sm-2">
+            Start <input type="time">
+        </div>
+        <div class="col-sm-2">
+            End <input type="time">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-2">
+            <input type="checkbox"> Friday
+        </div>
+        <div class="col-sm-2">
+            Start <input type="time">
+        </div>
+        <div class="col-sm-2">
+            End <input type="time">
+        </div>
+    </div>
 <% end %>

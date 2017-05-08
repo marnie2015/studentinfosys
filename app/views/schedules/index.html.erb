@@ -2,21 +2,20 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <p id="notice"><%= notice %></p>
-            
             <div class="row page-header" style="margin-bottom: 10px;">
               <div class="col-sm-3">
                <label>School Year:</label>
                 <select class="form-control">
-                  <option>2014-2015</option>
-                  <option>2015-2016</option>
                   <option>2016-2017</option>
+                  <option>2015-2016</option>
+                  <option>2014-2015</option>
                 </select>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                <label>Grade:</label>
                 <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                <label>Section:</label>
                 <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
               </div>
@@ -25,18 +24,73 @@
                     <span class="glyphicon glyphicon-search"></span> Search
                 </button>
               </div>
-              
+              <div class="col-sm-3" style="margin-top: 25px;">
+                <a href="/schedules/new" class="btn btn-primary pull-right">
+                    <span class="glyphicon glyphicon-calendar"></span> Add Schedule
+                </a>
+              </div>
             </div>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>School Year</th>
-                  <th>Grade / Year Level</th>
-                  <th>Section</th>
-                  <th>Subject</th>
-                  <th>Schedule</th>
+                  <td>School Year</td>
+                  <td>Grade / Year Level</td>
+                  <td>Section</td>
+                  <td>Subject</td>
+                  <td>Schedule</td>
+                  <td class="text-center"></td>
                 </tr>
               </thead>
+              <tbody>
+                <tr>
+                  <td>2016-2017</td>
+                  <td>Grade 7</td>
+                  <td>Section 1</td>
+                  <td>Math</td>
+                  <td>Monday to Friday 3pm-4pm</td>
+                  <td>
+                      <%= link_to "/schedules/new", :class => "btn btn-primary btn-sm" do %>
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                      <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2016-2017</td>
+                  <td>Grade 7</td>
+                  <td>Section 1</td>
+                  <td>Science</td>
+                  <td>Monday to Friday 1pm-2pm</td>
+                  <td>
+                      <%= link_to "/schedules/new", :class => "btn btn-primary btn-sm" do %>
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                      <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2016-2017</td>
+                  <td>Grade 7</td>
+                  <td>Section 1</td>
+                  <td>English</td>
+                  <td>Monday to Friday 2pm-3pm</td>
+                  <td>
+                      <%= link_to "/schedules/new", :class => "btn btn-primary btn-sm" do %>
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                      <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2016-2017</td>
+                  <td>Grade 7</td>
+                  <td>Section 1</td>
+                  <td>Filipino</td>
+                  <td>Monday to Friday 4pm-5pm</td>
+                  <td>
+                      <%= link_to "/schedules/new", :class => "btn btn-primary btn-sm" do %>
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                      <% end %>
+                  </td>
+                </tr>
+              </tbody>
             </table>
             <br>
             <div class="row text-center">
