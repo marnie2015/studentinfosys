@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :schedules
   resources :subjects
   get '/grades' => 'grades#index'
