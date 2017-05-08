@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   resources :users
   resources :schedules
   resources :subjects
+  get '/change-password' => 'home#change_password'
   get '/grades' => 'grades#index'
   get '/grades/show'
   get '/main' => 'home#main'
+  get '/schedule' => 'home#schedule'
+  get '/students-main' => 'home#students_main'
   get '/payments' => 'payments#index'
   
   resources :students
