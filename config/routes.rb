@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :teachers
+  resources :positions
+  resources :events
   resources :users
   resources :schedules
   resources :subjects

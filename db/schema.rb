@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508053919) do
+ActiveRecord::Schema.define(version: 20170510080114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "year_level_id"
@@ -72,6 +84,16 @@ ActiveRecord::Schema.define(version: 20170508053919) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "position_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "teachers", ["position_id"], name: "index_teachers_on_position_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
     t.string   "user_pass"
@@ -91,4 +113,5 @@ ActiveRecord::Schema.define(version: 20170508053919) do
   add_foreign_key "student_year_sections", "sections"
   add_foreign_key "student_year_sections", "students"
   add_foreign_key "student_year_sections", "year_levels"
+  add_foreign_key "teachers", "positions"
 end
