@@ -17,11 +17,11 @@
     </div>
     <div class="col-sm-2">
       <label for="year_level_id">Grade / Year Level</label>
-      <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {:selected => params[:id] ? @student_year_section.year_level_id : 0}, :class => "form-control")%>
+      <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {:selected => params[:id] ? begin @student_year_section.year_level_id rescue raise "No Year Level specified" end : 0}, :class => "form-control")%>
     </div>
     <div class="col-sm-2">
       <label for="student_other_info_section">Section</label>
-      <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {:selected => params[:id] ? @student_year_section.section_id : 0}, :class => "form-control")%>
+      <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {:selected => params[:id] ? begin @student_year_section.section_id rescue raise "No Section specified" end : 0}, :class => "form-control")%>
     </div>
     <div class="col-sm-2">
       <%= f.label :status %>

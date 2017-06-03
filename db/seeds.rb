@@ -14,10 +14,43 @@ Section.create([
 ])
 
 YearLevel.create([
+    {description: 'Grade 1'},
+    {description: 'Grade 2'},
+    {description: 'Grade 3'},
+    {description: 'Grade 4'},
+    {description: 'Grade 5'},
+    {description: 'Grade 6'},
     {description: 'Grade 7'},
     {description: 'Grade 8'},
     {description: 'Grade 9'},
     {description: 'Grade 10'},
     {description: 'Grade 11'},
     {description: 'Grade 12'}
+])
+
+
+Subject.create([
+    #elementary
+    {description: "Elem - ESP"},
+    {description: "Elem - MOTHER TONGUE"},
+    {description: "Elem - Filipino"},
+    {description: "Elem - Sibika"},
+    {description: "Elem - Computer"},
+    {description: "Elem - English"},
+    {description: "Elem - Mathematics"},
+    {description: "Elem - Science"},
+    {description: "Elem - Mapeh"},
+    {description: "Elem - T.L.E."},
+    {description: "Elem - EPP"},
+
+    #High School
+    {description: "HS - ESP"},
+    {description: "HS - Filipino"},
+    {description: "HS - Sibika"},
+    {description: "HS - Computer"},
+    {description: "HS - English"},
+    {description: "HS - Mathematics"},
+    {description: "HS - Science"},
+    {description: "HS - Mapeh"},
+    {description: "HS - T.L.E"}
 ])
