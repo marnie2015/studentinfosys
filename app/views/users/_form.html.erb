@@ -19,6 +19,13 @@
     <%= f.password_field :user_pass, :class => "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :access %>
+    <select class="form-control" name="user[access]">
+        <option value="1">Admin</option>
+        <option value="2">Payroll</option>
+    </select>
+  </div>
+  <div class="form-group">
     <%= f.label :status %>
     <select class="form-control" name="user[status]">
         <option value="active">Active</option>
