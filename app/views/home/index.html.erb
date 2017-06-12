@@ -1,16 +1,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-            <form>
+            <form action="/login" method="post">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <label for="user_name">Username</label>
+                    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="user_pass">Password</label>
+                    <input type="password" class="form-control" id="user_pass" name="user_pass" placeholder="Password" required>
                 </div>
-                <a href="/main" class="btn btn-md btn-default">Login</a>
+                <button type="submit" id="btn_login" class="btn btn-md btn-default">Login</button>
             </form>
         </div>
     </div>

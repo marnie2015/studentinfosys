@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/logout' => 'home#logout'
+  post '/login' => 'home#login'
   resources :teachers
   resources :positions
   resources :events
