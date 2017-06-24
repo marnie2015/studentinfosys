@@ -25,7 +25,7 @@
     </div>
     <div class="col-sm-2">
       <%= f.label :status %>
-      <select class="form-control" name="student[status]">
+      <select id="student_status" class="form-control" name="student[status]">
         <option>Active</option>
         <option>Inactive</option>
       </select>
@@ -34,7 +34,7 @@
   <div class="row">
     <div class="col-sm-4">
         <%= f.label "First Name" %>
-        <%= f.text_field :fname, class: "form-control" %>
+        <%= f.text_field :fname, class: "form-control", :required => true %>
     </div>
     <div class="col-sm-4">
         <%= f.label "Middle Name" %>
@@ -42,13 +42,13 @@
     </div>
     <div class="col-sm-4">
         <%= f.label "Last Name" %>
-        <%= f.text_field :lname, class: "form-control" %>
+        <%= f.text_field :lname, class: "form-control", :required => true %>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
       <%= f.label :birthdate %>
-      <%= f.date_field :birthdate, class: "form-control" %>
+      <%= f.date_field :birthdate, class: "form-control", :required => true %>
     </div>
     <div class="col-sm-4">
       <%= f.label :gender %>
@@ -61,17 +61,17 @@
   <div class="row">
     <div class="col-sm-4">
       <%= f.label :contact_1 %>
-      <%= f.text_field :contact_1, class: "form-control" %>
+      <%= f.text_field :contact_1, class: "form-control", :maxlength => 11, :required => true %>
     </div>
     <div class="col-sm-4">
       <%= f.label :contact_2 %>
-      <%= f.text_field :contact_2, class: "form-control" %>
+      <%= f.text_field :contact_2, class: "form-control", :maxlength => 11 %>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-6">
       <%= f.label :address_1 %>
-      <%= f.text_field :address_1, class: "form-control" %>
+      <%= f.text_field :address_1, class: "form-control", :required => true %>
     </div>
     <div class="col-sm-6">
       <%= f.label :address_2 %>
@@ -81,11 +81,13 @@
   <div class="row">
     <div class="col-sm-6">
       <%= f.label :username %>
-      <%= f.text_field :user_name, class: "form-control" %>
+      <input class="form-control" type="text" name="user[user_name]" id="user_user_name" value="<%= @user.user_name %>" required>
     </div>
     <div class="col-sm-6">
       <%= f.label :password %>
-      <%= f.password_field :user_pass, class: "form-control" %>
+      <input class="form-control" type="text" name="user[user_pass]" id="user_user_pass" value="<%= @user.user_pass %>">
+      <input class="form-control" type="hidden" name="user[access]" value="3">
+      <input class="form-control" type="hidden" name="user[status]" id="user_status" value="Active">
     </div>
   </div>
   <div class="row" id="div-btn-save">
@@ -96,3 +98,11 @@
     </div>
   </div>
 <% end %>
+<script>
+  $(document).ready(function(){
+    $("#student_status").change(function() {
+      var status = $("#student_status option:selected").val();
+      $("#user_status").val(status);
+    });
+  });
+</script>

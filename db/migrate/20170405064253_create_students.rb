@@ -10,10 +10,9 @@ class CreateStudents < ActiveRecord::Migration
       t.string :address_2
       t.string :contact_1
       t.string :contact_2
-      t.string :user_name
-      t.string :user_pass
       t.string :status
       t.string :student_id
+      t.integer :user_id
 
       t.timestamps null: false
     end

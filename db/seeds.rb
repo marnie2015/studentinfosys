@@ -54,3 +54,7 @@ Subject.create([
     {description: "HS - Mapeh"},
     {description: "HS - T.L.E"}
 ])
+
+User.create([
+    {user_name: "admin", user_pass: "admin", access: 1, status: "Active"}
+])

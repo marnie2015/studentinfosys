@@ -11,11 +11,13 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @student_year_section = StudentYearSection.where(student_id: @student.id).first
+    @user = User.where(id: @student.user_id).first
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @user = User.new
     autogenerate_id
   end
 
@@ -28,9 +30,11 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-
+    @user = User.new(user_params)
     respond_to do |format|
+      @user.save
       if @student.save
+        @student.update(user_id: @user.id)
         StudentYearSection.create(student_id: @student.id, year_level_id: params[:year_level][:id], section_id: params[:section][:id])
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
@@ -80,6 +84,10 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address_1, :address_2, :contact_1, :contact_2, :user_name, :user_pass, :status, :student_id)
+      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address_1, :address_2, :contact_1, :contact_2, :status, :student_id)
+    end
+
+    def user_params
+      params.require(:user).permit(:user_name, :user_pass, :access, :status)
     end
 end
