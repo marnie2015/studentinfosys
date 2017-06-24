@@ -58,3 +58,9 @@ Subject.create([
 User.create([
     {user_name: "admin", user_pass: "admin", access: 1, status: "Active"}
 ])
+
+Position.create([
+    {description: "Teacher I"},
+    {description: "Teacher II"},
+    {description: "Teacher III"}
+])

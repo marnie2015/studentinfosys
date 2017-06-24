@@ -39,6 +39,7 @@
                   <th>Address 1</th>
                   <th>Contact 1</th>
                   <th>Status</th>
+                  <th>Grade</th>
                   <th colspan="3"></th>
                 </tr>
               </thead>
@@ -52,6 +53,7 @@
                     <td><%= student.address_1.titleize %></td>
                     <td><%= student.contact_1 %></td>
                     <td><%= student.status %></td>
+                    <td><%= student.grade %></td>
                     <td><%= link_to student, :class => "btn btn-primary btn-sm" do %>
                           <span class="glyphicon glyphicon-eye-open"></span> View
                         <% end %>
