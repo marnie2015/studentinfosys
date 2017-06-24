@@ -46,10 +46,10 @@
                 <% @students.each do |student| %>
                   <tr>
                     <td><%= student.student_id %></td>
-                    <td><%= student.fname %></td>
-                    <td><%= student.mname %></td>
-                    <td><%= student.lname %></td>
-                    <td><%= student.address_1 %></td>
+                    <td><%= student.fname.titleize %></td>
+                    <td><%= student.mname.titleize %></td>
+                    <td><%= student.lname.titleize %></td>
+                    <td><%= student.address_1.titleize %></td>
                     <td><%= student.contact_1 %></td>
                     <td><%= student.status %></td>
                     <td><%= link_to student, :class => "btn btn-primary btn-sm" do %>

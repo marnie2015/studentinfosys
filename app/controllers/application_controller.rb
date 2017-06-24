@@ -5,7 +5,15 @@ class ApplicationController < ActionController::Base
 
   def check_access
     if session[:user].nil?
-      render file: "public/404.html"
+      render file: "public/404.html", layout: false
     end
+  end
+
+  def student_access_only
+      render file: "public/404.html", layout: false if session[:user]["access"] != 3
+  end
+
+  def admin_access_only
+      render file: "public/404.html", layout: false if session[:user]["access"] != 1
   end
 end
