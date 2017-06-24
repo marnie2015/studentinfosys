@@ -5,6 +5,10 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.paginate(:page => params[:page], :per_page => 20)
+    if params[:txt_search]
+        @students = Student.where("fname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+        @students = Student.where("lname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
+    end
   end
 
   # GET /students/1
@@ -24,6 +28,7 @@ class StudentsController < ApplicationController
   # GET /students/1/edit
   def edit
     @student_year_section = StudentYearSection.where(student_id: @student.id).first
+    @user = User.where(id: @student.user_id).first
   end
 
   # POST /students
