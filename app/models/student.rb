@@ -8,8 +8,7 @@ class Student < ActiveRecord::Base
                           students.fname, 
                           students.mname, 
                           students.lname, 
-                          students.address_1, 
-                          students.contact_1, 
+                          students.address,
                           students.status, 
                           year_levels.description grade")
                             

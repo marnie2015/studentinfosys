@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.index_fields.paginate(:page => params[:page], :per_page => 20)
-                 
     if params[:txt_search]
         @students = Student.index_fields.where("students.fname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
         @students = Student.index_fields.where("students.lname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
@@ -92,7 +91,9 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address_1, :address_2, :contact_1, :contact_2, :status, :student_id)
+      params.require(:student).permit(:fname, :mname, :lname, :birthdate, :gender, :address, :birthplace, :religion, :status, :student_id, 
+      :father_name, :father_birthdate, :father_address, :father_occupation, :father_contact, 
+      :mother_name, :mother_birthdate, :mother_address, :mother_occupation, :mother_contact)
     end
 
     def user_params
