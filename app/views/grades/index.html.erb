@@ -30,7 +30,6 @@
                   <th>Middle name</th>
                   <th>Last name</th>
                   <th>Address 1</th>
-                  <th>Contact 1</th>
                   <th>Status</th>
                   <th colspan="2"></th>
                 </tr>
@@ -42,15 +41,14 @@
                     <td><%= student.fname %></td>
                     <td><%= student.mname %></td>
                     <td><%= student.lname %></td>
-                    <td><%= student.address_1 %></td>
-                    <td><%= student.contact_1 %></td>
+                    <td><%= student.address %></td>
                     <td><%= student.status %></td>
-                    <td><%= link_to "/grades/show", :class => "btn btn-primary btn-sm" do %>
+                    <td><%= link_to "/grades/show/" + student.id.to_s, :class => "btn btn-primary btn-sm" do %>
                           <span class="glyphicon glyphicon-eye-open"></span> View Grades
                         <% end %>
                     </td>
                     <td>
-                        <%= link_to "/grades/show", :class => "btn btn-primary btn-sm" do %>
+                        <%= link_to "/grades/show/" + student.id.to_s, :class => "btn btn-primary btn-sm" do %>
                           <span class="glyphicon glyphicon-pencil"></span> Edit Grades
                         <% end %>
                     </td>
