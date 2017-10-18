@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/main' => 'home#main'
   get '/schedule' => 'home#schedule'
   get '/students-main' => 'home#students_main'
+  post '/pay' => 'payments#pay'
   get '/payments' => 'payments#index'
   
   resources :students

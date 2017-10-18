@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  or_number: MyString
+  amount: 
+  school_year: MyString
+  payment_date: 2017-10-18
+  description: MyString
+
+two:
+  or_number: MyString
+  amount: 
+  school_year: MyString
+  payment_date: 2017-10-18
+  description: MyString
