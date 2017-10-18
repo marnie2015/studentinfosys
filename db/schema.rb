@@ -28,9 +28,12 @@ ActiveRecord::Schema.define(version: 20171018043949) do
     t.string   "school_year"
     t.date     "payment_date"
     t.string   "description"
+    t.integer  "student_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "payments", ["student_id"], name: "index_payments_on_student_id", using: :btree
 
   create_table "positions", force: :cascade do |t|
     t.string   "description"
@@ -127,6 +130,7 @@ ActiveRecord::Schema.define(version: 20171018043949) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "payments", "students"
   add_foreign_key "schedules", "sections"
   add_foreign_key "schedules", "year_levels"
   add_foreign_key "student_year_sections", "sections"

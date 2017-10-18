@@ -6,6 +6,7 @@ class CreatePayments < ActiveRecord::Migration
       t.string :school_year
       t.date :payment_date
       t.string :description
+      t.references :student, index: true, foreign_key: true
 
       t.timestamps null: false
     end

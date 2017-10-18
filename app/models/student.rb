@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
     has_many :student_year_sections
+    has_many :payments
 
     def self.index_fields
         joins(:student_year_sections => [:year_level])

@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   get '/schedule' => 'home#schedule'
   get '/students-main' => 'home#students_main'
   post '/pay' => 'payments#pay'
+  get '/payform/:student_id' => 'payments#payform'
   get '/payments' => 'payments#index'
+  get '/payments/:student_id' => 'payments#history'
+  get '/get-payment' => 'payments#get_payment'
   
   resources :students
   root 'home#index'

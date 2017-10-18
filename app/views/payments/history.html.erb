@@ -1,0 +1,80 @@
+<div class="container-fluid"><div class="row"><div class="col-sm-10 col-sm-offset-1">
+	<a class="btn btn-primary pull-right" href="/payments">
+			<span class="glyphicon glyphicon-arrow-left"></span> Back
+	</a><br /><br />
+	<div class="panel panel-default">
+        <div class="panel-heading">Student's Information</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    First Name: <strong><%= @student.fname %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Middle Name: <strong><%= @student.mname %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Last Name: <strong><%= @student.lname %></strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    Grade / Year Level: <strong><%= @student.year_level %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Section: <strong><%= @student.section %></strong>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+	<div class="panel panel-default">
+        <div class="panel-heading">Payment History</div>
+        <div class="panel-body">
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <td>OR Number</td>
+                            <td>Date of Payment</td>
+                            <td>Amount Paid</td>
+                            <td>School Year</td>
+							<td>Action</td>
+                        </tr>
+						<% @payments.each do |payment| %>
+						<tr>
+                            <td><%= payment.or_number %></td>
+                           	<td><%= payment.payment_date %></td>
+							<td><%= payment.amount %></td>
+							<td><%= payment.school_year %></td>
+							<td>
+								<button type="button" class="btn btn-primary btn_view_history" data-or="<%= payment.or_number %>">
+									<span class="glyphicon glyphicon-eye-open"></span> View
+								</button>
+							</td>
+                        </tr>
+						<% end %>
+                    </table>
+               </div>
+            </div>
+        </div>
+    </div>
+	<!--start of modal-->
+	<div class="modal fade" tabindex="-1" role="dialog" id="modal_history">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="modal_title">OR Number</h4>
+			</div>
+			<div class="modal-body">
+				<table id="tbl_payment_history" class="table table-bordered table-striped">
+                </table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default">Print</button>
+			</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of modal-->
+</div></div></div>

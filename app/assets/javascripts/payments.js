@@ -1,4 +1,4 @@
-$(".payments.index").ready(function() {
+$(".payments.payform").ready(function() {
 	var total = 0;
 	$("#tuition_fee").change(function() {
 		if ($(this).is(":checked")) {
@@ -15,7 +15,7 @@ $(".payments.index").ready(function() {
 
 	$("#registration_fee").change(function() {
 		if ($(this).is(":checked")) {
-			$("#breakdown").append("<tr id='tr_registration_fee'><td>Tuition Fee</td><td>100</td></tr>");
+			$("#breakdown").append("<tr id='tr_registration_fee'><td>Registration Fee</td><td>100</td></tr>");
 			$("#txt_registration_fee").val(100);
 			total += 100;
 		} else {
@@ -128,8 +128,44 @@ $(".payments.index").ready(function() {
 	// 	$("#span_total").text(total);
 	// });
 
+	$("#btn_pay").click(function() {
+		if($("#or_number").val()== "") {
+			alert("Please fill out OR Number!");
+		}
+		else if($("#span_total").text() == "0") {
+			alert("Please select an accounts payable!");
+		}
+		else {
+			$("#modal_yes_no").modal({backdrop: 'static', keyboard: false});
+		}
+	});
+
 	$("#btn_yes").click(function() {
 		$("#pay_form").submit();
 	});
+
+	$("#btn_no").click(function() {
+		$("#modal_yes_no").modal("hide");
+	});
 	
+});
+
+//   start of /payments/:id
+
+$(".payments.history").ready(function() {
+	$(".btn_view_history").click(function() {
+		var or_number = $(this).data("or");
+		var obj, html;
+		//var html = 'sadf';
+		$.get("/get-payment?or_number=" + or_number, function(result) {
+			obj = JSON.parse(result);
+			for(var x=0;x<obj.length;x++) {
+				html+="<tr><td>" + obj[x].description + "</td><td>" + obj[x].amount + "</td></tr>"
+			}
+			$("#modal_title").html(or_number);
+			$("#tbl_payment_history").html(html);
+			$("#modal_history").modal({backdrop: 'static'});
+		});
+		
+	});
 });

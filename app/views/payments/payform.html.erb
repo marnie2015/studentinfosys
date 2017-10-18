@@ -1,0 +1,133 @@
+<style>
+    table td:nth-child(2) {
+        text-align: right;
+    }
+    strong {
+        text-decoration: underline;
+    }
+</style>
+<div class="container-fluid"><div class="row"><div class="col-sm-10 col-sm-offset-1">
+    <a class="btn btn-primary pull-right" href="/payments">
+    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+    <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">Student's Information</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    First Name: <strong><%= @student.fname %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Middle Name: <strong><%= @student.mname %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Last Name: <strong><%= @student.lname %></strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    Grade / Year Level: <strong><%= @student.year_level %></strong>
+                </div>
+                <div class="col-sm-4">
+                    Section: <strong><%= @student.section %></strong>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Billing Information</div>
+        <div class="panel-body">
+             <!-- start of payment form -->
+            <form method="post" action="/pay" id="pay_form">
+                <input type="hidden" name="student_id" value="<%= params[:student_id] %>" />
+                <input type="hidden" name="txt_tuition_fee" id="txt_tuition_fee" />
+                <input type="hidden" name="txt_registration_fee" id="txt_registration_fee" />
+                <input type="hidden" name="txt_miscellaneous" id="txt_miscellaneous" />
+                <input type="hidden" name="txt_books" id="txt_books" />
+                <input type="hidden" name="txt_school_service_fee" id="txt_school_service_fee" />
+                <input type="hidden" name="txt_aircon_fee" id="txt_aircon_fee" />
+                <input type="hidden" name="txt_security_guard_fee" id="txt_security_guard_fee" />
+                <input type="hidden" name="txt_janitors_fee" id="txt_janitors_fee" />
+                <input type="hidden" name="txt_school_uniforms" id="txt_school_uniforms" />
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-sm-4">
+                        <label>School Year:</label>
+                        <select class="form-control" name="school_year">
+                            <option>2016-2017</option>
+                            <option>2015-2016</option>
+                            <option>2014-2015</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>OR Number:</label>
+                        <input type="text" name="or_number" id="or_number" class="form-control" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="btn_pay" style="margin-top: 24px;">Pay</button>
+                    </div>
+                </div>
+            </form>
+            <!-- end of payment form -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="checkbox" id="tuition_fee" class="pay"> Tuition Fee
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="registration_fee" class="pay"> Registration Fee
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="miscellaneous" class="pay"> Miscellaneous Fee
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="checkbox" id="books" class="pay"> Books
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="school_service_fee" class="pay"> School Service Fee
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="aircon_fee" class="pay"> Aircon Fee
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <input type="checkbox" id="security_guard_fee" class="pay"> Security Guard Fee
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="janitors_fee" class="pay"> Janitors Fee
+                </div>
+                <div class="col-sm-4">
+                    <input type="checkbox" id="school_uniforms" class="pay"> School Uniforms
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-sm-12">
+                    <table class="table table-bordered table-striped" id="breakdown">
+                        <tr class="info">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong><span id="span_total">0</span></strong></td>
+                        </tr>
+                    </table>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- start of modal -->
+    <div id="modal_yes_no" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Are you sure do you want to proceed?
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_yes" type="button" class="btn btn-primary">Yes</button>
+                    <button id="btn_no" type="button" class="btn btn-primary">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end of modal-->
+</div></div></div>
