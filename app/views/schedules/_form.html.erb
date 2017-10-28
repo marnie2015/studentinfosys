@@ -13,6 +13,7 @@
         <div class="col-sm-3">
             <label>School Year:</label>
             <select class="form-control">
+                <option>2017-2018</option>
                 <option>2016-2017</option>
                 <option>2015-2016</option>
                 <option>2014-2015</option>
@@ -28,22 +29,13 @@
         </div>
         <div class="col-sm-3">
             <label>Subject:</label>
-            <select class="form-control" name="section[id]" id="section_id">
-                <option value="2">Math</option>
-                <option value="3">Science</option>
-                <option value="4">English</option>
-                <option value="4">Filipino</option>
-            </select>
+            <%= select("subject", "id", Subject.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
         </div>
     </div>
     <div class="row" style="margin-top: 20px;">
         <div class="col-sm-3">
             <label>Teacher:</label>
-            <select class="form-control">
-                <option>Mr. X</option>
-                <option>Ms. Y</option>
-                <option>Mrs. D</option>
-            </select>
+           <%= select("teacher", "id", Teacher.all.collect {|t| [t.first_name + " " + t.last_name, t.id]}, {}, :class => "form-control")%>
         </div>
     </div>
     <div class="row" style="margin-top: 20px;">
