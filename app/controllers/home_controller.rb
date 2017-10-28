@@ -25,7 +25,7 @@ class HomeController < ApplicationController
     user = User.where(:user_name =>  params[:user_name], :user_pass => params[:user_pass])
     if user.count > 0
       session[:user] = user.first
-      redirect_to "/main" if user.first.access == 1
+      redirect_to "/main" if user.first.access == 1 || user.first.access == 2
       redirect_to "/students-main" if user.first.access == 3
     else
       session[:user] = nil
