@@ -105,7 +105,7 @@ class PaymentsController < ApplicationController
 
 	def history
 		year_now = Time.now.year
-		current_school_year = year_now + "-" + (year_now + 1.year)
+		current_school_year = year_now.to_s + "-" + (year_now + 1.year).to_s
 		@student = Student.joins(:student_year_sections => [:year_level, :section]).
 					select("students.fname, students.mname, students.lname, students.id, 
 							sections.description section, 

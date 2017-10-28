@@ -54,7 +54,7 @@
                     <div class="col-sm-4">
                         <label>School Year:</label>
                         <select class="form-control" name="school_year">
-                            <% (Time.now.year + 1.year).to_i.downto(2013).each do |t| %>
+                            <% 2018.to_i.downto(2013).each do |t| %>
                                 <option><%= (t-1) %>-<%= t %></option>
                             <% end %>
                         </select>

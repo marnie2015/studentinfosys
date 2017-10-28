@@ -21,7 +21,7 @@
 					<tr>
 						<td><%= user.user_name %></td>
 						<td><%= "Admin" if user.access == 1 %>
-							<%= "Payroll" if user.access == 2 %>
+							<%= "Teacher" if user.access == 2 %>
 							<%= "Student" if user.access == 3 %>
 						</td>
 						<td><%= user.status %></td>
