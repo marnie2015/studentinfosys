@@ -54,9 +54,9 @@
                     <div class="col-sm-4">
                         <label>School Year:</label>
                         <select class="form-control" name="school_year">
-                            <option>2016-2017</option>
-                            <option>2015-2016</option>
-                            <option>2014-2015</option>
+                            <% (Time.now.year + 1.year).to_i.downto(2013).each do |t| %>
+                                <option><%= (t-1) %>-<%= t %></option>
+                            <% end %>
                         </select>
                     </div>
                     <div class="col-sm-4">
@@ -114,6 +114,29 @@
             </div>
         </div>
     </div>
+    <!-- start of previous payment -->
+    <div class="hidden panel panel-default">
+        <div class="panel-heading">Previous Payment</div>
+        <div class="row">
+            <div class="col-sm-12">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td>Test</td>
+                    <td>Test</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>Test</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>Test</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+    <!-- end of previous payment -- >
     <!-- start of modal -->
     <div id="modal_yes_no" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-sm" role="document">

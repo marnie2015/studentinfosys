@@ -95,7 +95,7 @@ class PaymentsController < ApplicationController
 
 	def payform
 		@student = Student.joins(:student_year_sections => [:year_level, :section]).
-					select("students,fname, students.mname, students.lname, students.id, 
+					select("students.fname, students.mname, students.lname, students.id, 
 							sections.description section, 
 							year_levels.description year_level").
 					find(params[:student_id])
@@ -104,8 +104,10 @@ class PaymentsController < ApplicationController
 	end
 
 	def history
+		year_now = Time.now.year
+		current_school_year = year_now + "-" + (year_now + 1.year)
 		@student = Student.joins(:student_year_sections => [:year_level, :section]).
-					select("students,fname, students.mname, students.lname, students.id, 
+					select("students.fname, students.mname, students.lname, students.id, 
 							sections.description section, 
 							year_levels.description year_level").
 					find(params[:student_id])
