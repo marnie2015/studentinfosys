@@ -15,19 +15,24 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
+    @user = User.new
   end
 
   # GET /teachers/1/edit
   def edit
+    @user = User.find(@teacher.user_id)
   end
 
   # POST /teachers
   # POST /teachers.json
   def create
     @teacher = Teacher.new(teacher_params)
+    @user = User.new(:user_name => params[:user_name], :user_pass => params[:user_pass], :status => 'Active', :access => 2)
 
     respond_to do |format|
-      if @teacher.save
+      if @user.save
+        @teacher.user_id = @user.id
+        @teacher.save
         format.html { redirect_to "/teachers", notice: 'Teacher was successfully created.' }
         format.json { render :show, status: :created, location: @teacher }
       else
@@ -69,6 +74,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:first_name, :last_name, :position_id)
+      params.require(:teacher).permit(:first_name, :last_name, :position_id, :user_id)
     end
 end
