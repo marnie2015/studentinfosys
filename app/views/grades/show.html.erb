@@ -17,7 +17,7 @@
             <option>2014-2015</option>
         </select>
     </div>
-    <a class="btn btn-primary pull-right" href="/grades">
+    <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? '/grades' : '/students-main' %>">
     <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
     <br><br>
     <div class="panel panel-default">
