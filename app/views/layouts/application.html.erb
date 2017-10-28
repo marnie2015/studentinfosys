@@ -24,7 +24,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if request.fullpath != "/" %>
-        <li><a href="<%= "/main" if session[:user]["access"] == 1 %>
+        <li><a href="<%= "/main" if session[:user]["access"] == 1 || session[:user]["access"] == 2 %>
                       <%= "/students-main" if session[:user]["access"] == 3 %>
                       ">Main</a></li>
         <li><a href="/logout">Logout</a></li>
