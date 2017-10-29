@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
+            <% if notice %><div class="alert alert-danger">
+            <span class="glyphicon glyphicon-lock"></span>
+            <%= notice %></div><% end %>
             <form action="/login" method="post">
                 <div class="form-group">
                     <label for="user_name">Username</label>

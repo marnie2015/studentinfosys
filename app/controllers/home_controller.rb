@@ -29,7 +29,7 @@ class HomeController < ApplicationController
       redirect_to "/students-main" if user.first.access == 3
     else
       session[:user] = nil
-      render :inline => "error"
+      redirect_to "/", notice: "Error: Invalid username or password!"
     end
   end
 
