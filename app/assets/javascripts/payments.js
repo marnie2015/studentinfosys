@@ -163,6 +163,7 @@ $(".payments.history").ready(function() {
 				html+="<tr><td>" + obj[x].description + "</td><td>" + obj[x].amount + "</td></tr>"
 			}
 			$("#modal_title").html(or_number);
+			$("#abtn_print").attr("href", "/payments/print/" + or_number);
 			$("#tbl_payment_history").html(html);
 			$("#modal_history").modal({backdrop: 'static'});
 		});

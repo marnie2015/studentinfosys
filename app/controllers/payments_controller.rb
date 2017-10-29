@@ -114,6 +114,12 @@ class PaymentsController < ApplicationController
 		@payments = Payment.where(:student_id => params[:student_id]).select(:or_number, :payment_date, :school_year).distinct
 	end
 
+	def print
+		@payments = Payment.where(:or_number => params[:or_number])
+		render layout: false
+	end
+
+	#javascript call
 	def get_payment
 		@payment = Payment.where(:or_number => params[:or_number])
 		render inline: @payment.to_json
