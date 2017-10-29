@@ -111,7 +111,7 @@ class PaymentsController < ApplicationController
 							sections.description section, 
 							year_levels.description year_level").
 					find(params[:student_id])
-		@payments = Payment.where(:student_id => params[:student_id]).select(:or_number, :payment_date, :amount, :school_year).distinct
+		@payments = Payment.where(:student_id => params[:student_id]).select(:or_number, :payment_date, :school_year).distinct
 	end
 
 	def get_payment
