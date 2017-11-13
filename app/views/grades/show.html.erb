@@ -8,6 +8,9 @@
     .col-sm-6 {
         margin-top: 10px;
     }
+    .input-group-addon {
+        cursor: pointer;
+    }
 </style>
 <div class="container-fluid"><div class="row"><div class="col-sm-10 col-sm-offset-1">
     <div class="col-sm-3 row">
@@ -53,64 +56,114 @@
                 <div class="panel-heading">First Grading</div>
                 <div class="panel-body">
                     <div class="col-sm-6">
-                        Math
+                        Computer
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Science
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="computer1" id="computer1" disabled value="<%= @computer1 %>"/>
+                            <div class="input-group-addon editcomputer1 edit" data-name="computer1">Edit</div>
+                            <div class="input-group-addon savecomputer1 hidden save" data-name="computer1">Save</div>
+                            <div class="input-group-addon cancelcomputer1 hidden cancel" data-name="computer1">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         English
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Filipino
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Mother Tongue
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Sibika
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Computer
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        MAPEH
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        T.L.E
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="english1" id="english1" disabled value="<%= @english1 %>"/>
+                            <div class="input-group-addon editenglish1 edit" data-name="english1">Edit</div>
+                            <div class="input-group-addon saveenglish1 hidden save" data-name="english1">Save</div>
+                            <div class="input-group-addon cancelenglish1 hidden cancel" data-name="english1">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         EPP
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="epp1" id="epp1" disabled value="<%= @epp1 %>"/>
+                            <div class="input-group-addon editepp1 edit" data-name="epp1">Edit</div>
+                            <div class="input-group-addon saveepp1 hidden save" data-name="epp1">Save</div>
+                            <div class="input-group-addon cancelepp1 hidden cancel" data-name="epp1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Filipino
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="filipino1" id="filipino1" disabled value="<%= @filipino1 %>"/>
+                            <div class="input-group-addon editfilipino1 edit" data-name="filipino1">Edit</div>
+                            <div class="input-group-addon savefilipino1 hidden save" data-name="filipino1">Save</div>
+                            <div class="input-group-addon cancelfilipino1 hidden cancel" data-name="filipino1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mapeh
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mapeh1" id="mapeh1" disabled value="<%= @mapeh1 %>"/>
+                            <div class="input-group-addon editmapeh1 edit" data-name="mapeh1">Edit</div>
+                            <div class="input-group-addon savemapeh1 hidden save" data-name="mapeh1">Save</div>
+                            <div class="input-group-addon cancelmapeh1 hidden cancel" data-name="mapeh1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mathematics
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mathematics1" id="mathematics1" disabled value="<%= @mathematics1 %>"/>
+                            <div class="input-group-addon editmathematics1 edit" data-name="mathematics1">Edit</div>
+                            <div class="input-group-addon savemathematics1 hidden save" data-name="mathematics1">Save</div>
+                            <div class="input-group-addon cancelmathematics1 hidden cancel" data-name="mathematics1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mother Tongue
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mother_tongue1" id="mother_tongue1" disabled value="<%= @mother_tongue1 %>"/>
+                            <div class="input-group-addon editmother_tongue1 edit" data-name="mother_tongue1">Edit</div>
+                            <div class="input-group-addon savemother_tongue1 hidden save" data-name="mother_tongue1">Save</div>
+                            <div class="input-group-addon cancelmother_tongue1 hidden cancel" data-name="mother_tongue1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Science
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="science1" id="science1" disabled value="<%= @science1 %>"/>
+                            <div class="input-group-addon editscience1 edit" data-name="science1">Edit</div>
+                            <div class="input-group-addon savescience1 hidden save" data-name="science1">Save</div>
+                            <div class="input-group-addon cancelscience1 hidden cancel" data-name="science1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Sibika
+                    </div>
+                    <div class="col-sm-6">
+                       <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="sibika1" id="sibika1" disabled value="<%= @sibika1 %>"/>
+                            <div class="input-group-addon editsibika1 edit" data-name="sibika1">Edit</div>
+                            <div class="input-group-addon savesibika1 hidden save" data-name="sibika1">Save</div>
+                            <div class="input-group-addon cancelsibika1 hidden cancel" data-name="sibika1">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        T.L.E
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="tle1" id="tle1" disabled value="<%= @tle1 %>"/>
+                            <div class="input-group-addon edittle1 edit" data-name="tle1">Edit</div>
+                            <div class="input-group-addon savetle1 hidden save" data-name="tle1">Save</div>
+                            <div class="input-group-addon canceltle1 hidden cancel" data-name="tle1">Cancel</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,64 +173,114 @@
                 <div class="panel-heading">Second Grading</div>
                 <div class="panel-body">
                     <div class="col-sm-6">
-                        Math
+                        Computer
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Science
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="computer2" id="computer2" disabled value="<%= @computer2 %>"/>
+                            <div class="input-group-addon editcomputer2 edit" data-name="computer2">Edit</div>
+                            <div class="input-group-addon savecomputer2 hidden save" data-name="computer2">Save</div>
+                            <div class="input-group-addon cancelcomputer2 hidden cancel" data-name="computer2">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         English
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Filipino
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Mother Tongue
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Sibika
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Computer
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        MAPEH
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        T.L.E
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="english2" id="english2" disabled value="<%= @english2 %>"/>
+                            <div class="input-group-addon editenglish2 edit" data-name="english2">Edit</div>
+                            <div class="input-group-addon saveenglish2 hidden save" data-name="english2">Save</div>
+                            <div class="input-group-addon cancelenglish2 hidden cancel" data-name="english2">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         EPP
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="epp2" id="epp2" disabled value="<%= @epp2 %>"/>
+                            <div class="input-group-addon editepp2 edit" data-name="epp2">Edit</div>
+                            <div class="input-group-addon saveepp2 hidden save" data-name="epp2">Save</div>
+                            <div class="input-group-addon cancelepp2 hidden cancel" data-name="epp2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Filipino
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="filipino2" id="filipino2" disabled value="<%= @filipino2 %>"/>
+                            <div class="input-group-addon editfilipino2 edit" data-name="filipino2">Edit</div>
+                            <div class="input-group-addon savefilipino2 hidden save" data-name="filipino2">Save</div>
+                            <div class="input-group-addon cancelfilipino2 hidden cancel" data-name="filipino2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mapeh
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mapeh2" id="mapeh2" disabled value="<%= @mapeh2 %>"/>
+                            <div class="input-group-addon editmapeh2 edit" data-name="mapeh2">Edit</div>
+                            <div class="input-group-addon savemapeh2 hidden save" data-name="mapeh2">Save</div>
+                            <div class="input-group-addon cancelmapeh2 hidden cancel" data-name="mapeh2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mathematics
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mathematics2" id="mathematics2" disabled value="<%= @mathematics2 %>"/>
+                            <div class="input-group-addon editmathematics2 edit" data-name="mathematics2">Edit</div>
+                            <div class="input-group-addon savemathematics2 hidden save" data-name="mathematics2">Save</div>
+                            <div class="input-group-addon cancelmathematics2 hidden cancel" data-name="mathematics2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mother Tongue
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mother_tongue2" id="mother_tongue2" disabled value="<%= @mother_tongue2 %>"/>
+                            <div class="input-group-addon editmother_tongue2 edit" data-name="mother_tongue2">Edit</div>
+                            <div class="input-group-addon savemother_tongue2 hidden save" data-name="mother_tongue2">Save</div>
+                            <div class="input-group-addon cancelmother_tongue2 hidden cancel" data-name="mother_tongue2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Science
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="science2" id="science2" disabled value="<%= @science2 %>"/>
+                            <div class="input-group-addon editscience2 edit" data-name="science2">Edit</div>
+                            <div class="input-group-addon savescience2 hidden save" data-name="science2">Save</div>
+                            <div class="input-group-addon cancelscience2 hidden cancel" data-name="science2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Sibika
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="sibika2" id="sibika2" disabled value="<%= @sibika2 %>"/>
+                            <div class="input-group-addon editsibika2 edit" data-name="sibika2">Edit</div>
+                            <div class="input-group-addon savesibika2 hidden save" data-name="sibika2">Save</div>
+                            <div class="input-group-addon cancelsibika2 hidden cancel" data-name="sibika2">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        T.L.E
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="tle2" id="tle2" disabled value="<%= @tle2 %>"/>
+                            <div class="input-group-addon edittle2 edit" data-name="tle2">Edit</div>
+                            <div class="input-group-addon savetle2 hidden save" data-name="tle2">Save</div>
+                            <div class="input-group-addon canceltle2 hidden cancel" data-name="tle2">Cancel</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,64 +292,114 @@
                 <div class="panel-heading">Third Grading</div>
                 <div class="panel-body">
                     <div class="col-sm-6">
-                        Math
+                        Computer
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Science
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="computer3" id="computer3" disabled value="<%= @computer3 %>"/>
+                            <div class="input-group-addon editcomputer3 edit" data-name="computer3">Edit</div>
+                            <div class="input-group-addon savecomputer3 hidden save" data-name="computer3">Save</div>
+                            <div class="input-group-addon cancelcomputer3 hidden cancel" data-name="computer3">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         English
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Filipino
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Mother Tongue
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Sibika
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Computer
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        MAPEH
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        T.L.E
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="english3" id="english3" disabled value="<%= @english3 %>"/>
+                            <div class="input-group-addon editenglish3 edit" data-name="english3">Edit</div>
+                            <div class="input-group-addon saveenglish3 hidden save" data-name="english3">Save</div>
+                            <div class="input-group-addon cancelenglish3 hidden cancel" data-name="english3">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         EPP
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="epp3" id="epp3" disabled value="<%= @epp3 %>"/>
+                            <div class="input-group-addon editepp3 edit" data-name="epp3">Edit</div>
+                            <div class="input-group-addon saveepp3 hidden save" data-name="epp3">Save</div>
+                            <div class="input-group-addon cancelepp3 hidden cancel" data-name="epp3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Filipino
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="filipino3" id="filipino3" disabled value="<%= @filipino3 %>"/>
+                            <div class="input-group-addon editfilipino3 edit" data-name="filipino3">Edit</div>
+                            <div class="input-group-addon savefilipino3 hidden save" data-name="filipino3">Save</div>
+                            <div class="input-group-addon cancelfilipino3 hidden cancel" data-name="filipino3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mapeh
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mapeh3" id="mapeh3" disabled value="<%= @mapeh3 %>"/>
+                            <div class="input-group-addon editmapeh3 edit" data-name="mapeh3">Edit</div>
+                            <div class="input-group-addon savemapeh3 hidden save" data-name="mapeh3">Save</div>
+                            <div class="input-group-addon cancelmapeh3 hidden cancel" data-name="mapeh3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mathematics
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mathematics3" id="mathematics3" disabled value="<%= @mathematics3 %>"/>
+                            <div class="input-group-addon editmathematics3 edit" data-name="mathematics3">Edit</div>
+                            <div class="input-group-addon savemathematics3 hidden save" data-name="mathematics3">Save</div>
+                            <div class="input-group-addon cancelmathematics3 hidden cancel" data-name="mathematics3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mother Tongue
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mother_tongue3" id="mother_tongue3" disabled value="<%= @mother_tongue3 %>"/>
+                            <div class="input-group-addon editmother_tongue3 edit" data-name="mother_tongue3">Edit</div>
+                            <div class="input-group-addon savemother_tongue3 hidden save" data-name="mother_tongue3">Save</div>
+                            <div class="input-group-addon cancelmother_tongue3 hidden cancel" data-name="mother_tongue3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Science
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="science3" id="science3" disabled value="<%= @science3 %>"/>
+                            <div class="input-group-addon editscience3 edit" data-name="science3">Edit</div>
+                            <div class="input-group-addon savescience3 hidden save" data-name="science3">Save</div>
+                            <div class="input-group-addon cancelscience3 hidden cancel" data-name="science3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Sibika
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="sibika3" id="sibika3" disabled value="<%= @sibika3 %>"/>
+                            <div class="input-group-addon editsibika3 edit" data-name="sibika3">Edit</div>
+                            <div class="input-group-addon savesibika3 hidden save" data-name="sibika3">Save</div>
+                            <div class="input-group-addon cancelsibika3 hidden cancel" data-name="sibika3">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        T.L.E
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="tle3" id="tle3" disabled value="<%= @tle3 %>"/>
+                            <div class="input-group-addon edittle3 edit" data-name="tle3">Edit</div>
+                            <div class="input-group-addon savetle3 hidden save" data-name="tle3">Save</div>
+                            <div class="input-group-addon canceltle3 hidden cancel" data-name="tle3">Cancel</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,67 +409,134 @@
                 <div class="panel-heading">Fourth Grading</div>
                 <div class="panel-body">
                     <div class="col-sm-6">
-                        Math
+                        Computer
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Science
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="computer4" id="computer4" disabled value="<%= @computer4 %>"/>
+                            <div class="input-group-addon editcomputer4 edit" data-name="computer4">Edit</div>
+                            <div class="input-group-addon savecomputer4 hidden save" data-name="computer4">Save</div>
+                            <div class="input-group-addon cancelcomputer4 hidden cancel" data-name="computer4">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         English
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Filipino
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Mother Tongue
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Sibika
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        Computer
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        MAPEH
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
-                    </div>
-                    <div class="col-sm-6">
-                        T.L.E
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="english4" id="english4" disabled value="<%= @english4 %>"/>
+                            <div class="input-group-addon editenglish4 edit" data-name="english4">Edit</div>
+                            <div class="input-group-addon saveenglish4 hidden save" data-name="english4">Save</div>
+                            <div class="input-group-addon cancelenglish4 hidden cancel" data-name="english4">Cancel</div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         EPP
                     </div>
                     <div class="col-sm-6">
-                        <input type="number" class="form-control pull-right" max="100" min="0" />
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="epp4" id="epp4" disabled value="<%= @epp4 %>"/>
+                            <div class="input-group-addon editepp4 edit" data-name="epp4">Edit</div>
+                            <div class="input-group-addon saveepp4 hidden save" data-name="epp4">Save</div>
+                            <div class="input-group-addon cancelepp4 hidden cancel" data-name="epp4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Filipino
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="filipino4" id="filipino4" disabled value="<%= @filipino4 %>"/>
+                            <div class="input-group-addon editfilipino4 edit" data-name="filipino4">Edit</div>
+                            <div class="input-group-addon savefilipino4 hidden save" data-name="filipino4">Save</div>
+                            <div class="input-group-addon cancelfilipino4 hidden cancel" data-name="filipino4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mapeh
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mapeh4" id="mapeh4" disabled value="<%= @mapeh4 %>"/>
+                            <div class="input-group-addon editmapeh4 edit" data-name="mapeh4">Edit</div>
+                            <div class="input-group-addon savemapeh4 hidden save" data-name="mapeh4">Save</div>
+                            <div class="input-group-addon cancelmapeh4 hidden cancel" data-name="mapeh4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mathematics
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mathematics4" id="mathematics4" disabled value="<%= @mathematics4 %>"/>
+                            <div class="input-group-addon editmathematics4 edit" data-name="mathematics4">Edit</div>
+                            <div class="input-group-addon savemathematics4 hidden save" data-name="mathematics4">Save</div>
+                            <div class="input-group-addon cancelmathematics4 hidden cancel" data-name="mathematics4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Mother Tongue
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="mother_tongue4" id="mother_tongue4" disabled value="<%= @mother_tongue4 %>"/>
+                            <div class="input-group-addon editmother_tongue4 edit" data-name="mother_tongue4">Edit</div>
+                            <div class="input-group-addon savemother_tongue4 hidden save" data-name="mother_tongue4">Save</div>
+                            <div class="input-group-addon cancelmother_tongue4 hidden cancel" data-name="mother_tongue4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Science
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="science4" id="science4" disabled value="<%= @science4 %>"/>
+                            <div class="input-group-addon editscience4 edit" data-name="science4">Edit</div>
+                            <div class="input-group-addon savescience4 hidden save" data-name="science4">Save</div>
+                            <div class="input-group-addon cancelscience4 hidden cancel" data-name="science4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        Sibika
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="sibika4" id="sibika4" disabled value="<%= @sibika4 %>"/>
+                            <div class="input-group-addon editsibika4 edit" data-name="sibika4">Edit</div>
+                            <div class="input-group-addon savesibika4 hidden save" data-name="sibika4">Save</div>
+                            <div class="input-group-addon cancelsibika4 hidden cancel" data-name="sibika4">Cancel</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        T.L.E
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="number" class="form-control pull-right" max="100" min="0" name="tle4" id="tle4" disabled value="<%= @tle4 %>"/>
+                            <div class="input-group-addon edittle4 edit" data-name="tle4">Edit</div>
+                            <div class="input-group-addon savetle4 hidden save" data-name="tle4">Save</div>
+                            <div class="input-group-addon canceltle4 hidden cancel" data-name="tle4">Cancel</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div></div></div>
+<script>
+    $(document).ready(function() {
+        //click save
+        $(".save").click(function() {
+            var nme = $(this).data("name");
+
+            $(".edit" + nme).removeClass("hidden");
+            $(".save" + nme).addClass("hidden");
+            $(".cancel" + nme).addClass("hidden");
+
+            $.get("/save-grade?" + nme + "=" + $("#" + nme).val() + "&student_id=<%= params[:id] %>", function(res) {
+                alert(res);
+                $("#" + nme).attr("disabled", true);
+            });
+        });
+    })
+</script>

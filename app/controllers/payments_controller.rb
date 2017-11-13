@@ -100,7 +100,7 @@ class PaymentsController < ApplicationController
 							year_levels.description year_level").
 					find(params[:student_id])
 		
-		@payments = Payment.where(:student_id => params[:student_id], :school_year => "2016-2017")
+		@payments = Payment.where(:student_id => params[:student_id], :school_year => params[:school_year])
 	end
 
 	def history

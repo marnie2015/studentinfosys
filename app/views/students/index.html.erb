@@ -1,7 +1,6 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-            <p id="notice"><%= notice %></p>
             <h1 class="page-header">Students Information</h1>
             <div class="row page-header" style="margin-bottom: 10px;">
               <form>
@@ -53,7 +52,7 @@
                     <td><%= student.lname.titleize %></td>
                     <td><%= student.address.titleize %></td>
                     <td><%= student.status %></td>
-                    <td><%= student.grade %></td>
+                    <td><%= student.student_year_sections.first.year_level.description %></td>
                     <td><%= link_to student, :class => "btn btn-primary btn-sm" do %>
                           <span class="glyphicon glyphicon-eye-open"></span> View
                         <% end %>

@@ -46,7 +46,7 @@
                     <td><%= student.lname.titleize %></td>
                     <td><%= student.address.titleize %></td>
                     <td><%= student.status %></td>
-                    <td><%= student.grade %></td>
+                    <td><%= student.student_year_sections.first.year_level.description %></td>
                     <td><%= link_to "/payments/#{student.id}", :class => "btn btn-primary btn-sm" do %>
                           <span class="glyphicon glyphicon-eye-open"></span> View
                         <% end %>

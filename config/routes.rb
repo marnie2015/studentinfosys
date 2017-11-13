@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # start of javascript calls
+  get '/save-grade' => 'grades#save_grade'
+  # end of javascript calls
+
   get '/logout' => 'home#logout'
   post '/login' => 'home#login'
   resources :teachers
