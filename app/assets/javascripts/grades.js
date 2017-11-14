@@ -21,4 +21,8 @@ $(".grades.show").ready(function() {
 		$("#" + nme).attr("disabled", true);
 	});
 
+	//change school year
+	$("#school_year_form").change(function(){
+		$(this).submit();
+	});
 });

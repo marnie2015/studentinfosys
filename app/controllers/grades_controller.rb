@@ -1,6 +1,11 @@
 class GradesController < ApplicationController
   def index
     @students = Student.paginate(:page => params[:page], :per_page => 20)
+    if params[:txt_search]
+      @students = Student.index_fields.where("students.fname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+      @students = Student.index_fields.where("students.lname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
+      @students = Student.index_fields.where("year_levels.description ilike ?", "#{params[:txt_search]}").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "year_level"
+    end
   end
   
   def show
@@ -10,7 +15,12 @@ class GradesController < ApplicationController
                                 year_levels.description year_level").
                         find(params[:id])
 
-    @grade = Grade.where(:student_id => params[:id]).first
+    sy = Time.now.year.to_s + "-" + (Time.now + 1.year).year.to_s
+    if params[:school_year]
+      sy = params[:school_year]
+    end
+    @grade = Grade.where(:student_id => params[:id], :school_year => sy).first
+    if @grade
     @computer1 = @grade.computer1
     @computer2 = @grade.computer2
     @computer3 = @grade.computer3
@@ -50,19 +60,20 @@ class GradesController < ApplicationController
     @tle1 = @grade.tle1
     @tle2 = @grade.tle2
     @tle3 = @grade.tle3
-    @tle4 = @grade.tle4                  
+    @tle4 = @grade.tle4
+    end       
   end
 
   # start of javascript calls
   def save_grade
-    @grade = Grade.where(:student_id => params[:student_id]).first
+    @grade = Grade.where(:student_id => params[:student_id], :school_year => params[:school_year]).first
     if @grade
       @grade.update(grade_params)
     else
       Grade.new(grade_params).save
     end
 
-    render inline: "okasdf"
+    render inline: "ok"
   end
   # end of javascript calls
 

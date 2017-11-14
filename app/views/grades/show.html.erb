@@ -14,11 +14,13 @@
 </style>
 <div class="container-fluid"><div class="row"><div class="col-sm-10 col-sm-offset-1">
     <div class="col-sm-3 row">
-        <select class="form-control">
-            <option>2016-2017</option>
-            <option>2015-2016</option>
-            <option>2014-2015</option>
+        <form id="school_year_form" method="get" action="/grades/show/<%= params[:id] %>">
+        <select class="form-control" id="school_year" name="school_year">
+            <% (Time.now + 1.year).year.downto(2014).each do |yr| %>
+             <option <%= 'selected' if params[:school_year] == (yr-1).to_s + "-" + yr.to_s %>><%= (yr-1).to_s + "-" + yr.to_s %></option>
+            <% end %>
         </select>
+        </form>
     </div>
     <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? '/grades' : '/students-main' %>">
     <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
@@ -528,12 +530,13 @@
         //click save
         $(".save").click(function() {
             var nme = $(this).data("name");
+            var school_year = $("#school_year option:selected").val();
 
             $(".edit" + nme).removeClass("hidden");
             $(".save" + nme).addClass("hidden");
             $(".cancel" + nme).addClass("hidden");
 
-            $.get("/save-grade?" + nme + "=" + $("#" + nme).val() + "&student_id=<%= params[:id] %>", function(res) {
+            $.get("/save-grade?" + nme + "=" + $("#" + nme).val() + "&student_id=<%= params[:id] %>" + "&school_year=" + school_year, function(res) {
                 alert(res);
                 $("#" + nme).attr("disabled", true);
             });
