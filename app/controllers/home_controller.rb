@@ -22,11 +22,27 @@ class HomeController < ApplicationController
   end
 
   def login
-    user = User.where(:user_name =>  params[:user_name], :user_pass => params[:user_pass])
-    if user.count > 0
-      session[:user] = user.first
-      redirect_to "/main" if user.first.access == 1 || user.first.access == 2
-      redirect_to "/students-main" if user.first.access == 3
+    user_name = User.where(:user_name =>  params[:user_name])
+    if user_name.count > 0
+        if user_name.first.tries.to_i == 3
+          redirect_to "/", notice: "Your account has been disabled!"
+        else
+          user = user_name.where(:user_pass => params[:user_pass])
+          if user.count > 0
+            session[:user] = user.first
+            user.first.update(:tries => 0)
+            redirect_to "/main" if user.first.access == 1 || user.first.access == 2
+            redirect_to "/students-main" if user.first.access == 3
+          else
+              user_name.first.update(:tries => user_name.first.tries.to_i + 1)
+              if user_name.first.tries.to_i == 3
+                redirect_to "/", notice: "Your account has been disabled!"
+              else
+                session[:user] = nil
+                redirect_to "/", notice: "Error: Invalid username or password!"
+              end
+          end
+        end
     else
       session[:user] = nil
       redirect_to "/", notice: "Error: Invalid username or password!"

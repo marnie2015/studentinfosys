@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_pass
       t.string :status
       t.integer :access
+      t.integer :tries
       
       t.timestamps null: false
     end

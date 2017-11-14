@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(version: 20171113133254) do
     t.string   "user_pass"
     t.string   "status"
     t.integer  "access"
+    t.integer  "tries"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
