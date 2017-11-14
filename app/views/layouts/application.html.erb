@@ -27,6 +27,19 @@
         <li><a href="<%= "/main" if session[:user]["access"] == 1 || session[:user]["access"] == 2 %>
                       <%= "/students-main" if session[:user]["access"] == 3 %>
                       ">Main</a></li>
+        <% if session[:user]["access"] == 1 %>
+        <li><a href="/users">User Account</a></li>
+        <li><a href="/students">Student's Info</a></li>
+        <% end %>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/grades">Grades</a></li>
+        <% if session[:user]["access"] == 1 %>
+        <li><a href="/teachers">Teachers</a></li>
+        <% end %>
+        <li><a href="/schedules">Schedule</a></li>
+        <% if session[:user]["access"] == 1 %>
+        <li><a href="/payments">Payments</a></li>
+        <% end %>
         <li><a href="/logout">Logout</a></li>
         <% end %>
       </ul>

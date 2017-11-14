@@ -14,6 +14,7 @@
 					<tr>
 						<th>Description</th>
 						<% if session[:user]["access"] == 1 %><th></th><% end %>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -26,6 +27,10 @@
 							<% end %>
 						</td>
 						<% end %>
+						<td><%= link_to event_path(event), :class => "btn btn-sm btn-primary" do %>
+							View
+							<% end %>
+						</td>
 					</tr>
 					<% end %>
 				</tbody>
