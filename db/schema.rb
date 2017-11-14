@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20171113133254) do
 
   create_table "events", force: :cascade do |t|
     t.string   "description"
+    t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -95,7 +96,8 @@ ActiveRecord::Schema.define(version: 20171113133254) do
     t.integer  "section_id"
     t.string   "school_year"
     t.string   "description"
-    t.string   "schedule"
+    t.string   "schedule_day"
+    t.string   "schedule_time"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

@@ -48,3 +48,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # for page pagination
 gem 'will_paginate', '~> 3.1.0'
+
+# for uploading
+gem 'carrierwave', '~> 1.0'
