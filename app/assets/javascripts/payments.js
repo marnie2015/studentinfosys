@@ -117,6 +117,241 @@ $(".payments.payform").ready(function() {
 		$("#span_total").text(total);
 	});
 
+	$("#male_su_grade1to6").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_male_su_grade1to6'><td>Male School Uniforms Grade 1 to 6</td><td>100</td></tr>");
+			$("#txt_male_su_grade1to6").val(100);
+			total += 100;
+		} else {
+			$("#tr_male_su_grade1to6").remove();
+			$("#txt_male_su_grade1to6").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#male_su_grade7to10").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_male_su_grade7to10'><td>Male School Uniforms Grade 7 to 10</td><td>100</td></tr>");
+			$("#txt_male_su_grade7to10").val(100);
+			total += 100;
+		} else {
+			$("#tr_male_su_grade7to10").remove();
+			$("#txt_male_su_grade7to10").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#male_su_grade11to12").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_male_su_grade11to12'><td>Male School Uniforms Grade 11 to 12</td><td>100</td></tr>");
+			$("#txt_male_su_grade11to12").val(100);
+			total += 100;
+		} else {
+			$("#tr_male_su_grade11to12").remove();
+			$("#txt_male_su_grade11to12").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#female_su_grade1to6").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_female_su_grade1to6'><td>Female School Uniforms Grade 1 to 6</td><td>100</td></tr>");
+			$("#txt_female_su_grade1to6").val(100);
+			total += 100;
+		} else {
+			$("#tr_female_su_grade1to6").remove();
+			$("#txt_female_su_grade1to6").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#female_su_grade7to10").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_female_su_grade7to10'><td>Female School Uniforms Grade 7 to 10</td><td>100</td></tr>");
+			$("#txt_female_su_grade7to10").val(100);
+			total += 100;
+		} else {
+			$("#tr_female_su_grade7to10").remove();
+			$("#txt_female_su_grade7to10").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#female_su_grade11to12").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_female_su_grade11to12'><td>Female School Uniforms Grade 11 to 12</td><td>100</td></tr>");
+			$("#txt_female_su_grade11to12").val(100);
+			total += 100;
+		} else {
+			$("#tr_female_su_grade11to12").remove();
+			$("#txt_female_su_grade11to12").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	//BOOKS
+	$("#books_grade1").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade1'><td>Books Grade 1</td><td>100</td></tr>");
+			$("#txt_books_grade1").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade1").remove();
+			$("#txt_books_grade1").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade2").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade2'><td>Books Grade 2</td><td>100</td></tr>");
+			$("#txt_books_grade2").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade2").remove();
+			$("#txt_books_grade2").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade3").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade3'><td>Books Grade 3</td><td>100</td></tr>");
+			$("#txt_books_grade3").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade3").remove();
+			$("#txt_books_grade3").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade4").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade4'><td>Books Grade 4</td><td>100</td></tr>");
+			$("#txt_books_grade4").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade4").remove();
+			$("#txt_books_grade4").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade5").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade5'><td>Books Grade 5</td><td>100</td></tr>");
+			$("#txt_books_grade5").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade5").remove();
+			$("#txt_books_grade5").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade6").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade6'><td>Books Grade 6</td><td>100</td></tr>");
+			$("#txt_books_grade6").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade6").remove();
+			$("#txt_books_grade6").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade7").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade7'><td>Books Grade 7</td><td>100</td></tr>");
+			$("#txt_books_grade7").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade7").remove();
+			$("#txt_books_grade7").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade8").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade8'><td>Books Grade 8</td><td>100</td></tr>");
+			$("#txt_books_grade8").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade8").remove();
+			$("#txt_books_grade8").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade9").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade9'><td>Books Grade 9</td><td>100</td></tr>");
+			$("#txt_books_grade9").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade9").remove();
+			$("#txt_books_grade9").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade10").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade10'><td>Books Grade 10</td><td>100</td></tr>");
+			$("#txt_books_grade10").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade10").remove();
+			$("#txt_books_grade10").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade11").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade11'><td>Books Grade 11</td><td>100</td></tr>");
+			$("#txt_books_grade11").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade11").remove();
+			$("#txt_books_grade11").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
+	$("#books_grade12").change(function() {
+		if ($(this).is(":checked")) {
+			$("#breakdown").append("<tr id='tr_books_grade12'><td>Books Grade 12</td><td>100</td></tr>");
+			$("#txt_books_grade12").val(100);
+			total += 100;
+		} else {
+			$("#tr_books_grade12").remove();
+			$("#txt_books_grade12").val(0);
+			total -= 100;
+		}
+		$("#span_total").text(total);
+	});
+
 	// $("#books").change(function() {
 	// 	if ($(this).is(":checked")) {
 	// 		$("#breakdown").append("<tr id='tr_books'><td>Books</td><td>100</td></tr>");
