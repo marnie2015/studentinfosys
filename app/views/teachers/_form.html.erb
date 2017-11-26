@@ -31,6 +31,14 @@
     <%= f.label "Position" %>
     <%= select("teacher", "position_id", Position.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[position_id]")%>
   </div>
+  <div class="form-group">
+    <%= f.label "Position" %>
+    <%= select("teacher", "subject_id", Subject.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[subject_id]")%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Position" %>
+    <%= select("teacher", "room_id", Room.all.collect {|r| [r.description, r.id]}, {}, :class => "form-control", :name => "teacher[room_id]")%>
+  </div>
   <button class="btn btn-md btn-primary">
       Save
   </button>

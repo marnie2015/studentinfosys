@@ -64,3 +64,18 @@ Position.create([
     {description: "Teacher II"},
     {description: "Teacher III"}
 ])
+
+Room.create([
+    {description: "Room 1"},
+    {description: "Room 2"},
+    {description: "Room 3"},
+    {description: "Room 4"},
+    {description: "Room 5"},
+    {description: "Room 6"},
+    {description: "Room 7"},
+    {description: "Room 8"},
+    {description: "Room 9"},
+    {description: "Room 10"},
+    {description: "Room 11"},
+    {description: "Room 12"}
+])

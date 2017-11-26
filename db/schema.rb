@@ -91,6 +91,12 @@ ActiveRecord::Schema.define(version: 20171113133254) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.integer  "year_level_id"
     t.integer  "section_id"
@@ -160,6 +166,8 @@ ActiveRecord::Schema.define(version: 20171113133254) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "position_id"
+    t.integer  "subject_id"
+    t.integer  "room_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

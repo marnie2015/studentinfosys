@@ -4,7 +4,12 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+    @teachers = Teacher.joins(:position, :subject, :room).
+                  select("teachers.id, teachers.first_name,
+                          teachers.last_name,
+                          positions.description pos,
+                          subjects.description sub,
+                          rooms.description rm")
   end
 
   # GET /teachers/1
@@ -74,6 +79,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:first_name, :last_name, :position_id, :user_id)
+      params.require(:teacher).permit(:first_name, :last_name, :position_id, :user_id, :subject_id, :room_id)
     end
 end
