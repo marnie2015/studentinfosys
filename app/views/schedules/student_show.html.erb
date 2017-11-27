@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <p id="notice"><%= notice %></p>
+            <h1 class="page-header">
+            <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? "/schedules" : "/main" %>">
+                <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+            Schedule</h1>
+            <form id="school_year_form" method="get" action="/schedules/student/<%= params[:year_level_id] %>/<%= params[:section_id] %>" style="width: 150px;">
+                <select class="form-control" id="school_year" name="school_year">
+                    <% (Time.now + 1.year).year.downto(2014).each do |yr| %>
+                    <option <%= 'selected' if params[:school_year] == (yr-1).to_s + "-" + yr.to_s %>><%= (yr-1).to_s + "-" + yr.to_s %></option>
+                    <% end %>
+                </select>
+            </form>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td><strong>Time</strong></td>
+                    <td><strong>Monday</strong></td>
+                    <td><strong>Tuesday</strong></td>
+                    <td><strong>Wednesday</strong></td>
+                    <td><strong>Thursday</strong></td>
+                    <td><strong>Friday</strong></td>
+                </tr>
+                <tr>
+                    <td>8AM - 9AM</td>
+                    <% @sched8.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>9AM - 10AM</td>
+                    <% @sched9.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>10AM - 11AM</td>
+                    <% @sched10.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>11AM - 12NN</td>
+                    <% @sched11.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>12NN - 1PM</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td>1PM - 2PM</td>
+                    <% @sched13.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>2PM - 3PM</td>
+                    <% @sched14.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>3PM - 4PM</td>
+                    <% @sched15.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>4PM - 5PM</td>
+                    <% @sched16.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

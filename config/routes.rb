@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :schedules
   resources :subjects
+  get '/schedules/student/:year_level_id/:section_id' => 'schedules#student_show'
   post '/change-password' => 'users#change_password'
   get '/change-password' => 'home#change_password'
   get '/grades' => 'grades#index'

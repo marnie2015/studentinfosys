@@ -1,4 +1,6 @@
 class GradesController < ApplicationController
+  before_filter :check_access
+  
   def index
     @students = Student.paginate(:page => params[:page], :per_page => 20)
     if params[:txt_search]

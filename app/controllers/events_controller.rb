@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :check_access
   before_filter :admin_access_only, only: [:new]
 
   # GET /events

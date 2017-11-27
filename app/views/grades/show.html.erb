@@ -22,7 +22,7 @@
         </select>
         </form>
     </div>
-    <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? '/grades' : '/students-main' %>">
+    <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 3 ? '/students-main' : '/grades' %>">
     <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
     <br><br>
     <div class="panel panel-default">

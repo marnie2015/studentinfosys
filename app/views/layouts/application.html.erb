@@ -32,11 +32,17 @@
         <li><a href="/students">Student's Info</a></li>
         <% end %>
         <li><a href="/events">Events</a></li>
-        <li><a href="/grades">Grades</a></li>
+        <li><a href="<%= session[:user]["access"] == 3 ? "/grades/show/#{@session_student.id}" : "/grades" %>">Grades</a></li>
         <% if session[:user]["access"] == 1 %>
         <li><a href="/teachers">Teachers</a></li>
         <% end %>
-        <li><a href="/schedules">Schedule</a></li>
+        <% if session[:user]["access"] == 1 #admin %>
+          <li><a href="/schedules">Schedule</a></li>
+        <% elsif session[:user]["access"] == 2 #teacher %>
+          <li><a href="/schedules/<%= Teacher.find_by_user_id(session[:user]["access"]).id %>">Schedule</a></li>
+        <% else %>
+          <li><a href="/schedules">Schedule</a></li>
+        <% end %>
         <% if session[:user]["access"] == 1 %>
         <li><a href="/payments">Payments</a></li>
         <% end %>

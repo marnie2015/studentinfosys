@@ -41,6 +41,23 @@ class SchedulesController < ApplicationController
             rooms.description rm").find(params[:id])
   end
 
+  def student_show
+    sy = Time.now.year.to_s + "-" + (Time.now + 1.year).year.to_s
+    if params[:school_year]
+      sy = params[:school_year]
+    end
+
+    @sched8 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "8AM - 9AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched9 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "9AM - 10AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched10 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "10AM - 11AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched11 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "11AM - 12NN", :school_year => sy).select("year_levels.description grade, sections.description sec")
+
+    @sched13 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "1PM - 2PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched14 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "2PM - 3PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched15 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "3PM - 4PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched16 = Schedule.joins(:year_level, :section).where(:year_level_id => params[:year_level_id], :section_id => params[:section_id], :schedule_time => "4PM - 5PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+  end
+
   # GET /schedules/new
   def new
     @schedule = Schedule.new
