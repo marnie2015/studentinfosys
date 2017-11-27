@@ -6,7 +6,7 @@
             <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? "/schedules" : "/main" %>">
                 <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
             Schedule</h1>
-            <form id="school_year_form" method="get" action="/schedules/student/<%= params[:year_level_id] %>/<%= params[:section_id] %>" style="width: 150px;">
+            <form id="school_year_form" method="get" class="hidden" action="/schedules/student/<%= params[:year_level_id] %>/<%= params[:section_id] %>" style="width: 150px;">
                 <select class="form-control" id="school_year" name="school_year">
                     <% (Time.now + 1.year).year.downto(2014).each do |yr| %>
                     <option <%= 'selected' if params[:school_year] == (yr-1).to_s + "-" + yr.to_s %>><%= (yr-1).to_s + "-" + yr.to_s %></option>

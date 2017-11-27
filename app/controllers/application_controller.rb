@@ -8,7 +8,17 @@ class ApplicationController < ActionController::Base
     if session[:user].nil?
       render file: "public/404.html", layout: false
     elsif session[:user]["access"] == 3 #student
-      @session_student = Student.find_by_user_id(session[:user]["id"])
+      @session_student = Student.joins(:student_year_sections => [:year_level]).
+                        select("students.id, 
+                                  students.student_id, 
+                                  students.fname, 
+                                  students.mname, 
+                                  students.lname, 
+                                  students.address,
+                                  students.status, 
+                                  student_year_sections.year_level_id,
+                                  student_year_sections.section_id").
+                                  find_by_user_id(session[:user]["id"])
     end
   end
 
