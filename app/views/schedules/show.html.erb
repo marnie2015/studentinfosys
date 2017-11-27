@@ -1,29 +1,96 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Year level:</strong>
-  <%= @schedule.year_level %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @schedule.section %>
-</p>
-
-<p>
-  <strong>School year:</strong>
-  <%= @schedule.school_year %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @schedule.description %>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
-  <%= @schedule.schedule %>
-</p>
-
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <p id="notice"><%= notice %></p>
+            <h1 class="page-header">
+            <a class="btn btn-primary pull-right" href="/schedules">
+                <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+            Schedule</h1>
+            <div class="panel panel-default">
+              <div class="panel-heading"></div>
+              <div class="panel-body">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          First Name: <strong><%= @teacher.first_name %></strong>
+                      </div>
+                      <div class="col-sm-3">
+                          Last Name: <strong><%= @teacher.last_name %></strong>
+                      </div>
+                      <div class="col-sm-3">
+                          Subject: <strong><%= @teacher.sub %></strong>
+                      </div>
+                      <div class="col-sm-3">
+                          Room: <strong><%= @teacher.rm %></strong>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td><strong>Time</strong></td>
+                    <td><strong>Monday</strong></td>
+                    <td><strong>Tuesday</strong></td>
+                    <td><strong>Wednesday</strong></td>
+                    <td><strong>Thursday</strong></td>
+                    <td><strong>Friday</strong></td>
+                </tr>
+                <tr>
+                    <td>8AM - 9AM</td>
+                    <% @sched8.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>9AM - 10AM</td>
+                    <% @sched9.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>10AM - 11AM</td>
+                    <% @sched10.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>11AM - 12NN</td>
+                    <% @sched11.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>12NN - 1PM</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td>1PM - 2PM</td>
+                    <% @sched13.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>2PM - 3PM</td>
+                    <% @sched14.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>3PM - 4PM</td>
+                    <% @sched15.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>4PM - 5PM</td>
+                    <% @sched16.each do |handle| %>
+                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <% end %>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
