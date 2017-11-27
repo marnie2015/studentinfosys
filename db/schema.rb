@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20171113133254) do
   create_table "schedules", force: :cascade do |t|
     t.integer  "year_level_id"
     t.integer  "section_id"
+    t.integer  "teacher_id"
     t.string   "school_year"
     t.string   "description"
     t.string   "schedule_day"
