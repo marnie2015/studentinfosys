@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_access_only
-      render file: "public/404.html", layout: false if session[:user]["access"] == 3
+      render file: "public/404.html", layout: false if session[:user]["access"] != 1
   end
 end

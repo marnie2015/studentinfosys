@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :admin_access_only, only: [:new]
 
   # GET /events
   # GET /events.json
@@ -14,7 +15,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+      @event = Event.new
   end
 
   # GET /events/1/edit

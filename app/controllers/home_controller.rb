@@ -6,7 +6,6 @@ class HomeController < ApplicationController
   end
 
   def main
-    admin_access_only
   end
 
   def students_main
