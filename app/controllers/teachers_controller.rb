@@ -41,8 +41,7 @@ class TeachersController < ApplicationController
         format.html { redirect_to "/teachers", notice: 'Teacher was successfully created.' }
         format.json { render :show, status: :created, location: @teacher }
       else
-        format.html { render :new }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
+        format.html {redirect_to "/teachers/new", notice: "Error: Username already exist!"}
       end
     end
   end
