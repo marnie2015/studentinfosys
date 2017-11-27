@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:edit, :update, :destroy]
   before_filter :admin_access_only, only: [:index, :new]
+  before_filter :check_access
 
   # GET /schedules
   # GET /schedules.json
