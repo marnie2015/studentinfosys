@@ -12,6 +12,7 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
+						<th>Teacher ID</th>
 						<th>First name</th>
 						<th>Last name</th>
 						<th>Position</th>
@@ -23,6 +24,7 @@
 				<tbody>
 					<% @teachers.each do |teacher| %>
 					<tr>
+						<td><%= teacher.teacherid %></td>
 						<td><%= teacher.first_name %></td>
 						<td><%= teacher.last_name %></td>
 						<td><%= teacher.pos %></td>

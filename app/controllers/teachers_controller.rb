@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
   # GET /teachers.json
   def index
     @teachers = Teacher.joins(:position, :subject, :room).
-                  select("teachers.id, teachers.first_name,
+                  select("teachers.id, teachers.teacherid, teachers.first_name,
                           teachers.last_name,
                           positions.description pos,
                           subjects.description sub,
