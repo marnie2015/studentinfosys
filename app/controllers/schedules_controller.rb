@@ -117,38 +117,44 @@ class SchedulesController < ApplicationController
     @friday16 = Schedule.new(friday16_params)
 
 
-    respond_to do |format|
-      if @monday8.save && @monday9.save &&
-        @monday10.save && @monday11.save &&
-        @monday13.save && @monday14.save &&
-        @monday15.save && @monday16.save && 
-
-        @tuesday8.save && @tuesday9.save &&
-        @tuesday10.save && @tuesday11.save &&
-        @tuesday13.save && @tuesday14.save &&
-        @tuesday15.save && @tuesday16.save && 
-
-        @wednesday8.save && @wednesday9.save &&
-        @wednesday10.save && @wednesday11.save &&
-        @wednesday13.save && @wednesday14.save &&
-        @wednesday15.save && @wednesday16.save && 
-
-        @thursday8.save && @thursday9.save &&
-        @thursday10.save && @thursday11.save &&
-        @thursday13.save && @thursday14.save &&
-        @thursday15.save && @thursday16.save && 
-
-        @friday8.save && @friday9.save &&
-        @friday10.save && @friday11.save &&
-        @friday13.save && @friday14.save &&
-        @friday15.save && @friday16.save
-        format.html { redirect_to "/schedules", notice: 'Schedule was successfully created.' }
-        format.json { render :show, status: :created, location: @schedule }
+    
+      sy = Schedule.where(:school_year => params[:schedule][:school_year], :teacher_id => params[:teacher][:id])
+      if sy.count > 0
+        redirect_to "/schedules/new", notice: "Error: Teacher already have a schedule for this school year"
       else
-        format.html { render :new }
-        format.json { render json: @schedule.errors, status: :unprocessable_entity }
-      end
-    end
+        respond_to do |format|
+          if @monday8.save && @monday9.save &&
+            @monday10.save && @monday11.save &&
+            @monday13.save && @monday14.save &&
+            @monday15.save && @monday16.save && 
+
+            @tuesday8.save && @tuesday9.save &&
+            @tuesday10.save && @tuesday11.save &&
+            @tuesday13.save && @tuesday14.save &&
+            @tuesday15.save && @tuesday16.save && 
+
+            @wednesday8.save && @wednesday9.save &&
+            @wednesday10.save && @wednesday11.save &&
+            @wednesday13.save && @wednesday14.save &&
+            @wednesday15.save && @wednesday16.save && 
+
+            @thursday8.save && @thursday9.save &&
+            @thursday10.save && @thursday11.save &&
+            @thursday13.save && @thursday14.save &&
+            @thursday15.save && @thursday16.save && 
+
+            @friday8.save && @friday9.save &&
+            @friday10.save && @friday11.save &&
+            @friday13.save && @friday14.save &&
+            @friday15.save && @friday16.save
+            format.html { redirect_to "/schedules", notice: 'Schedule was successfully created.' }
+            format.json { render :show, status: :created, location: @schedule }
+          else
+            format.html { render :new }
+            format.json { render json: @schedule.errors, status: :unprocessable_entity }
+          end # end of if
+        end #end of respond_to
+    end #end of if
   end
 
   # PATCH/PUT /schedules/1
