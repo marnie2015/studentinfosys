@@ -4,17 +4,24 @@
             <% if notice %><div class="alert alert-danger">
             <span class="glyphicon glyphicon-lock"></span>
             <%= notice %></div><% end %>
-            <form action="/login" method="post">
-                <div class="form-group">
-                    <label for="user_name">Username</label>
-                    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" required>
+            <div class="panel panel-default" style="margin-top: 40%;">
+                <div class="panel-heading">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                User Login</div>
+                <div class="panel-body">
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="user_name">Username</label>
+                            <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user_pass">Password</label>
+                            <input type="password" class="form-control" id="user_pass" name="user_pass" placeholder="Password" required>
+                        </div>
+                        <button type="submit" id="btn_login" class="btn btn-md btn-default">Login</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="user_pass">Password</label>
-                    <input type="password" class="form-control" id="user_pass" name="user_pass" placeholder="Password" required>
-                </div>
-                <button type="submit" id="btn_login" class="btn btn-md btn-default">Login</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
