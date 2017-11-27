@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_filter :check_access, :admin_access_only
+  before_filter :admin_access_only, except: [:show]
 
   # GET /students
   # GET /students.json
