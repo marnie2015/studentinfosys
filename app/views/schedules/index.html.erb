@@ -2,37 +2,34 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <p id="notice"><%= notice %></p>
-            <h1 class="page-header">Schedules</h1>
-            <div class="row page-header" style="margin-bottom: 10px;">
-              <div class="col-sm-3">
-               <label>School Year:</label>
-                <select class="form-control">
-                  <option>2016-2017</option>
-                  <option>2015-2016</option>
-                  <option>2014-2015</option>
-                </select>
+            <h1 class="page-header">Schedules
+            <% if session[:user]["access"] == 1 %>
+              <a href="/schedules/new" class="btn btn-primary pull-right">
+                  <span class="glyphicon glyphicon-calendar"></span> Add Schedule
+              </a>
+            <% end %>
+            </h1>
+                
+              <div class="row" style="margin-bottom: 10px;">
+                    <form>
+                      <div class="col-sm-3">
+                      <label>Search by:</label>
+                        <select class="form-control" name="searchby">
+                          <option value="fname">First Name</option>
+                          <option value="lname" <%= "selected" if params[:searchby] == "lname" %>>Last Name</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3">
+                        <label>Search text:</label>
+                        <input type="text" class="form-control" name="txt_search" value="<%= params[:txt_search] if params[:txt_search] %>">
+                      </div>
+                      <div class="col-sm-2" style="margin-top: 25px;">
+                        <button class="btn btn-primary" type="submit">
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                      </div>
+                      </form>
               </div>
-              <div class="col-sm-2">
-               <label>Grade:</label>
-                <%= select("year_level", "id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
-              </div>
-              <div class="col-sm-2">
-               <label>Section:</label>
-                <%= select("section", "id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control")%>
-              </div>
-              <div class="col-sm-2" style="margin-top: 25px;">
-                <button class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span> Search
-                </button>
-              </div>
-              <div class="col-sm-3" style="margin-top: 25px;">
-                <% if session[:user]["access"] == 1 %>
-                  <a href="/schedules/new" class="btn btn-primary pull-right">
-                      <span class="glyphicon glyphicon-calendar"></span> Add Schedule
-                  </a>
-                <% end %>
-              </div>
-            </div>
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>

@@ -7,13 +7,11 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     #@schedules = Schedule.paginate(:page => params[:page], :per_page => 20)
-    @teachers = Teacher.joins(:position, :subject, :room).
-                  select("teachers.id, teachers.first_name,
-                          teachers.last_name,
-                          positions.description pos,
-                          subjects.description sub,
-                          rooms.description rm").
-                  paginate(:page => params[:page], :per_page => 20)
+    @teachers = Teacher.index_fields.paginate(:page => params[:page], :per_page => 20)
+    if params[:txt_search]
+        @teachers = Teacher.index_fields.where("teachers.first_name ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+        @teachers = Teacher.index_fields.where("teachers.last_name ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
+    end
   end
 
   # GET /schedules/1
