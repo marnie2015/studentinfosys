@@ -18,15 +18,20 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-    @sched8 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "8AM - 9AM").select("year_levels.description grade, sections.description sec")
-    @sched9 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "9AM - 10AM").select("year_levels.description grade, sections.description sec")
-    @sched10 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "10AM - 11AM").select("year_levels.description grade, sections.description sec")
-    @sched11 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "11AM - 12NN").select("year_levels.description grade, sections.description sec")
+    sy = Time.now.year.to_s + "-" + (Time.now + 1.year).year.to_s
+    if params[:school_year]
+      sy = params[:school_year]
+    end
 
-    @sched13 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "1PM - 2PM").select("year_levels.description grade, sections.description sec")
-    @sched14 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "2PM - 3PM").select("year_levels.description grade, sections.description sec")
-    @sched15 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "3PM - 4PM").select("year_levels.description grade, sections.description sec")
-    @sched16 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "4PM - 5PM").select("year_levels.description grade, sections.description sec")
+    @sched8 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "8AM - 9AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched9 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "9AM - 10AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched10 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "10AM - 11AM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched11 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "11AM - 12NN", :school_year => sy).select("year_levels.description grade, sections.description sec")
+
+    @sched13 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "1PM - 2PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched14 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "2PM - 3PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched15 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "3PM - 4PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
+    @sched16 = Schedule.joins(:year_level, :section).where(:teacher_id => params[:id], :schedule_time => "4PM - 5PM", :school_year => sy).select("year_levels.description grade, sections.description sec")
   
     @teacher = Teacher.joins(:position, :subject, :room).
     select("teachers.id, teachers.first_name,

@@ -6,25 +6,32 @@
             <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? "/schedules" : "/main" %>">
                 <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
             Schedule</h1>
-            <div class="panel panel-default">
-              <div class="panel-heading"></div>
-              <div class="panel-body">
-                  <div class="row">
-                      <div class="col-sm-3">
-                          First Name: <strong><%= @teacher.first_name %></strong>
-                      </div>
-                      <div class="col-sm-3">
-                          Last Name: <strong><%= @teacher.last_name %></strong>
-                      </div>
-                      <div class="col-sm-3">
-                          Subject: <strong><%= @teacher.sub %></strong>
-                      </div>
-                      <div class="col-sm-3">
-                          Room: <strong><%= @teacher.rm %></strong>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <form id="school_year_form" method="get" action="/schedules/<%= params[:id] %>" style="width: 150px;">
+                <select class="form-control" id="school_year" name="school_year">
+                    <% (Time.now + 1.year).year.downto(2014).each do |yr| %>
+                    <option <%= 'selected' if params[:school_year] == (yr-1).to_s + "-" + yr.to_s %>><%= (yr-1).to_s + "-" + yr.to_s %></option>
+                    <% end %>
+                </select>
+            </form>
+            <div class="panel panel-default" style="margin-top: 20px;">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            First Name: <strong><%= @teacher.first_name %></strong>
+                        </div>
+                        <div class="col-sm-3">
+                            Last Name: <strong><%= @teacher.last_name %></strong>
+                        </div>
+                        <div class="col-sm-3">
+                            Subject: <strong><%= @teacher.sub %></strong>
+                        </div>
+                        <div class="col-sm-3">
+                            Room: <strong><%= @teacher.rm %></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <table class="table table-bordered table-striped">
                 <tr>
                     <td><strong>Time</strong></td>
