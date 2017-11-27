@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /users
   # GET /users.json
@@ -58,6 +59,15 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def change_password
+    user = User.where(:id => session[:user]["id"], :user_pass => params[:user_pass_current]).first
+    begin user.update(user_params)
+      redirect_to "/change-password", notice: "Password successfully changed!"
+    rescue
+      redirect_to "/change-password", notice: "Error: Password incorrect!"
     end
   end
 

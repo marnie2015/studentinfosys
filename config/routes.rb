@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :rooms
   # start of javascript calls
   get '/save-grade' => 'grades#save_grade'
   # end of javascript calls
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :schedules
   resources :subjects
+  post '/change-password' => 'users#change_password'
   get '/change-password' => 'home#change_password'
   get '/grades' => 'grades#index'
   get '/grades/show/:id' => 'grades#show'
