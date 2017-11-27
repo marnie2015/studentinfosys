@@ -47,7 +47,7 @@
             </div>
             <% end %>
             <div class="col-sm-4">
-                <a href="/schedules"><img src="/assets/schedule.png" class="img-thumbnail">
+                <a href="/schedules<%= "/#{Teacher.find_by_user_id(session[:user]["id"]).id}" if session[:user]["access"] == 2 %>"><img src="/assets/schedule.png" class="img-thumbnail">
                 <br />
                 Schedule
                 </a>
