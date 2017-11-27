@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(version: 20171113133254) do
   end
 
   create_table "teachers", force: :cascade do |t|
+    t.string   "teacherid"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "position_id"

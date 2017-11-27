@@ -21,6 +21,7 @@ class TeachersController < ApplicationController
   def new
     @teacher = Teacher.new
     @user = User.new
+    autogenerate_id
   end
 
   # GET /teachers/1/edit
@@ -71,6 +72,12 @@ class TeachersController < ApplicationController
     end
   end
 
+  def autogenerate_id
+    year_now = Time.now.year.to_s
+    get_last_teacher_id = Teacher.where("teacherid ilike ?", year_now + "ASF%").count + 1
+    @teacher_id = year_now + "ASF" + get_last_teacher_id.to_s.rjust(4, '0')
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
@@ -79,6 +86,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:first_name, :last_name, :position_id, :user_id, :subject_id, :room_id)
+      params.require(:teacher).permit(:first_name, :last_name, :position_id, :user_id, :subject_id, :room_id, :teacherid)
     end
 end

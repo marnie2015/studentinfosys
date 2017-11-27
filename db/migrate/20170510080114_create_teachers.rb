@@ -1,6 +1,7 @@
 class CreateTeachers < ActiveRecord::Migration
   def change
     create_table :teachers do |t|
+      t.string :teacherid
       t.string :first_name
       t.string :last_name
       t.references :position, index: true, foreign_key: true
