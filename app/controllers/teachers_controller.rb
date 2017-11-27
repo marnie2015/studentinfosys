@@ -4,12 +4,11 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.joins(:position, :subject, :room).
-                  select("teachers.id, teachers.teacherid, teachers.first_name,
-                          teachers.last_name,
-                          positions.description pos,
-                          subjects.description sub,
-                          rooms.description rm")
+    @teachers = Teacher.index_fields.paginate(:page => params[:page], :per_page => 20)
+    if params[:txt_search]
+        @teachers = Teacher.index_fields.where("teachers.first_name ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+        @teachers = Teacher.index_fields.where("teachers.last_name ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
+    end
   end
 
   # GET /teachers/1

@@ -4,11 +4,32 @@
 			<% if notice %>
 				<div class="alert alert-success"><%= notice %></div>
 			<% end %>
-			<h1>Teachers
+			
+			<h1 class="page-header">Teachers
 				<a href="/teachers/new" class="btn btn-primary pull-right">
 				<span class="glyphicon glyphicon-user"></span> Add Teacher
 				</a>
 			</h1>
+			<div class="row" style="margin-bottom: 10px;">
+			<form>
+              <div class="col-sm-3">
+               <label>Search by:</label>
+                <select class="form-control" name="searchby">
+                  <option value="fname">First Name</option>
+                  <option value="lname" <%= "selected" if params[:searchby] == "lname" %>>Last Name</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label>Search text:</label>
+                <input type="text" class="form-control" name="txt_search" value="<%= params[:txt_search] if params[:txt_search] %>">
+              </div>
+              <div class="col-sm-2" style="margin-top: 25px;">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+              </div>
+              </form>
+			</div>
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
