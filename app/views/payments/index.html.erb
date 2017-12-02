@@ -48,7 +48,7 @@
                     <td><%= student.status %></td>
                     <td><%= student.student_year_sections.first.year_level.description %></td>
                     <td><%= link_to "/payments/#{student.id}", :class => "btn btn-primary btn-sm" do %>
-                          <span class="glyphicon glyphicon-eye-open"></span> View
+                          <span class="glyphicon glyphicon-time"></span> View History
                         <% end %>
                     </td>
                     <td><%= link_to "/payform/#{student.id}", :class => "btn btn-primary btn-sm" do %>
