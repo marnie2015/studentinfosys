@@ -252,8 +252,11 @@
             <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday16[section_id]")%>
         </div>
     </div>
-    <button class="btn btn-md btn-primary" style="margin-top: 20px;">
+    <button class="btn btn-md btn-primary">
         Save
     </button>
+    <a class="btn btn-primary" href="/schedules">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back
+    </a>
     </form>
 <% end %>

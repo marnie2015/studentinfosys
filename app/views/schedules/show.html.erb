@@ -2,10 +2,7 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <p id="notice"><%= notice %></p>
-            <h1 class="page-header">
-            <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? "/schedules" : "/main" %>">
-                <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
-            Schedule</h1>
+            <h1 class="page-header">Schedule</h1>
             <form id="school_year_form" method="get" action="/schedules/<%= params[:id] %>" style="width: 150px;">
                 <select class="form-control" id="school_year" name="school_year">
                     <% (Time.now + 1.year).year.downto(2014).each do |yr| %>
@@ -98,6 +95,8 @@
                     <% end %>
                 </tr>
             </table>
+            <a class="btn btn-primary" href="<%= session[:user]["access"] == 1 ? "/schedules" : "/main" %>">
+                <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
         </div>
     </div>
 </div>
