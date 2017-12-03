@@ -44,16 +44,16 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-4">
+				<%= f.label "Last Name" %>
+				<%= f.text_field :lname, class: "form-control", :required => true %>
+			</div>
+			<div class="col-sm-4">
 				<%= f.label "First Name" %>
 				<%= f.text_field :fname, class: "form-control", :required => true %>
 			</div>
 			<div class="col-sm-4">
 				<%= f.label "Middle Name" %>
 				<%= f.text_field :mname, class: "form-control" %>
-			</div>
-			<div class="col-sm-4">
-				<%= f.label "Last Name" %>
-				<%= f.text_field :lname, class: "form-control", :required => true %>
 			</div>
 		</div>
 		<div class="row">
