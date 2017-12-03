@@ -9,32 +9,21 @@
 				</a>
 				<% end %>
 			</h1>
-			<table class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Description</th>
-						<% if session[:user]["access"] == 1 %><th></th><% end %>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @events.each do |event| %>
-					<tr>
-						<td><%= event.description %></td>
-						<% if session[:user]["access"] == 1 %>
-						<td><%= link_to edit_event_path(event), :class => "btn btn-sm btn-primary" do %>
-							Edit
-							<% end %>
-						</td>
-						<% end %>
-						<td><%= link_to event_path(event), :class => "btn btn-sm btn-primary" do %>
-							View
-							<% end %>
-						</td>
-					</tr>
+			<% @events.each do |event| %>
+			<div class="panel panel-default">
+				<div class="panel-heading">Date Created: <%= event.created_at.strftime("%m/%d/%Y") %>
+					<% if session[:user]["access"] == 1 %>
+						<a class="btn btn-sm btn-primary pull-right" href="/events/<%= event.id %>/edit" style="margin-top: -5px;">
+							<span class="glyphicon glyphicon-pencil"></span> Edit
+						</a>
 					<% end %>
-				</tbody>
-			</table>
+				</div>
+				<div class="panel-body">
+					<%= event.description %><br/>
+					<img src="<%= "#{event.image}" %>" width="80%">
+				</div>
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
