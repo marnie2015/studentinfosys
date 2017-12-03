@@ -22,8 +22,6 @@
         </select>
         </form>
     </div>
-    <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 3 ? '/students-main' : '/grades' %>">
-    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
     <br><br>
     <div class="panel panel-default">
         <div class="panel-heading">Student's Information</div>
@@ -604,6 +602,9 @@
             </div>
         </div>
     </div>
+    <a class="btn btn-primary" href="<%= session[:user]["access"] == 3 ? '/students-main' : '/grades' %>">
+        <span class="glyphicon glyphicon-arrow-left"></span> Back
+    </a>
 </div></div></div>
 <script>
     $(document).ready(function() {
