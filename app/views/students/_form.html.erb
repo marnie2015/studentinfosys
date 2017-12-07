@@ -73,11 +73,9 @@
 				<select class="form-control" name="student[religion]">
 					<option>Roman Catholic</option>
 					<option <%= 'selected' if @student.religion == 'Iglesia Ni Cristo' %>>Iglesia Ni Cristo</option>
-					<option <%= 'selected' if @student.religion == 'Islam' %>>Islam</option>
-					<option <%= 'selected' if @student.religion == 'Evangelicals' %>>Evangelicals</option>
-					<option <%= 'selected' if @student.religion == "Jehovah's Witnesses" %>>Jehovah's Witnesses</option>
-					<option <%= 'selected' if @student.religion == 'Seventh-day Adventist' %>>Seventh-day Adventist</option>
-					<option <%= 'selected' if @student.religion == 'Born Again Christian' %>>Born Again Christian</option>
+					<option <%= 'selected' if @student.religion == 'Muslim' %>>Muslim</option>
+					<option <%= 'selected' if @student.religion == 'Mormon' %>>Mormon</option>
+					<option <%= 'selected' if @student.religion == "Born Again Christian" %>>Born Again Christian</option>
 				</select>
 			</div>
 		</div>
