@@ -7,10 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Section.create([
-    {description: 'Section 1'},
-    {description: 'Section 2'},
-    {description: 'Section 3'},
-    {description: 'Section 4'}
+    {description: 'No Section'},
+    {description: 'Faith'},
+    {description: 'Love'},
+    {description: 'Hope'},
+    {description: 'Joy'},
+    {description: 'Humility'},
+    {description: 'Kindness'},
+    {description: 'Peace'}
 ])
 
 YearLevel.create([

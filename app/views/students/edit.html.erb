@@ -2,3 +2,8 @@
 <h1 class="page-header">Editing Student</h1>
 <%= render 'form' %>
 </div></div></div>
+<script>
+	$(document).ready(function() {
+		$("#section_id").val(<%= @student_year_section.section_id %>);
+	})
+</script>
