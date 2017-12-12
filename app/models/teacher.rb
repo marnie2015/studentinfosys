@@ -2,6 +2,7 @@ class Teacher < ActiveRecord::Base
   belongs_to :position
   belongs_to :subject
   belongs_to :room
+  has_many :schedules
 
   def self.index_fields
     joins(:position, :subject, :room).

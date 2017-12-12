@@ -23,59 +23,154 @@
                     <td><strong>Friday</strong></td>
                 </tr>
                 <tr>
-                    <td>8AM - 9AM</td>
-                    <% @sched8.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                    <td>
+                        <% begin %>
+                        <%= @sched1.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <td>Flag Ceremony</td>
+                    <td>Flag Ceremony</td>
+                    <td>Flag Ceremony</td>
+                    <td>Flag Ceremony</td>
+                    <td>Flag Ceremony</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched2.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched2.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
                     <% end %>
                 </tr>
                 <tr>
-                    <td>9AM - 10AM</td>
+                    <td>
+                        <% begin %>
+                        <%= @sched3.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched3.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched3.first.schedule_time[8..13] %> - 
+                        <%= @sched5.first.schedule_time[0..4] %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <td>Recess</td>
+                    <td>Recess</td>
+                    <td>Recess</td>
+                    <td>Recess</td>
+                    <td>Recess</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched5.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched5.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched6.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched6.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched7.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched7.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched7.first.schedule_time[8..13] %> - 
+                        <%= @sched9.first.schedule_time[0..4] %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% begin %>
+                        <%= @sched9.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
                     <% @sched9.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
                     <% end %>
                 </tr>
                 <tr>
-                    <td>10AM - 11AM</td>
+                    <td>
+                        <% begin %>
+                        <%= @sched10.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
                     <% @sched10.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
                     <% end %>
                 </tr>
                 <tr>
-                    <td>11AM - 12NN</td>
+                    <td>
+                        <% begin %>
+                        <%= @sched11.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
                     <% @sched11.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
                     <% end %>
                 </tr>
                 <tr>
-                    <td>12NN - 1PM</td>
-                    <td>Lunch Break</td>
-                    <td>Lunch Break</td>
-                    <td>Lunch Break</td>
-                    <td>Lunch Break</td>
-                    <td>Lunch Break</td>
+                    <td>
+                        <% begin %>
+                        <%= @sched12.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
+                    <% @sched12.each do |handle| %>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
+                    <% end %>
                 </tr>
                 <tr>
-                    <td>1PM - 2PM</td>
+                    <td>
+                        <% begin %>
+                        <%= @sched13.first.schedule_time %>
+                        <% rescue %>
+                        <% end %>
+                    </td>
                     <% @sched13.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>2PM - 3PM</td>
-                    <% @sched14.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>3PM - 4PM</td>
-                    <% @sched15.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>4PM - 5PM</td>
-                    <% @sched16.each do |handle| %>
-                      <td><%= handle.grade %> - <%= handle.sec %></td>
+                      <td><%= handle.subject %> - <%= handle.room %></td>
                     <% end %>
                 </tr>
             </table>

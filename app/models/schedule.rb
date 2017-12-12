@@ -1,6 +1,7 @@
 class Schedule < ActiveRecord::Base
   belongs_to :year_level
   belongs_to :section
+  belongs_to :teacher
 
   def self.index_fields
     joins(:position, :subject, :room).

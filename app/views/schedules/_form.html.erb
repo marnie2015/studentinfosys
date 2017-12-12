@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm-3">
             <label>Teacher:</label>
-           <%= select("teacher", "id", Teacher.all.collect {|t| [t.first_name + " " + t.last_name, t.id]}, {}, :class => "form-control")%>
+           <%= select("teacher", "id", Teacher.all.collect {|t| [t.first_name.upcase + " " + t.last_name.upcase, t.id]}, {}, :class => "form-control")%>
         </div>
     </div>
     <div class="row" style="margin-top: 20px;">
@@ -47,33 +47,190 @@
     </div>
     <div class="row margintop20">
         <div class="col-sm-2">
-           <p>8AM - 9AM</p>
+        Start
+           <input type="time" name="time1_start" value="07:30"><br>
+        End
+           <input type="time" name="time1_end" value="07:40" style="margin-left: 6px;">
         </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday8[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday8[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday8[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday8[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday8[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday8[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday8[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday8[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday8[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday8[section_id]")%>
+        <div class="col-sm-10 text-center">
+            <p class="alert alert-success">Flag Ceremony</p>
         </div>
     </div>
     <hr>
     <div class="row margintop20">
         <div class="col-sm-2">
-           <p>9AM - 10AM</p>
+        Start
+           <input type="time" name="time2_start" value="07:40"><br>
+        End
+           <input type="time" name="time2_end" value="08:20" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday2[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday2[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday2[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday2[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday2[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time3_start" value="08:20"><br>
+        End
+           <input type="time" name="time3_end" value="09:10" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday3[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday3[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday3[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday3[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday3[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time4_start" value="09:10"><br>
+        End
+           <input type="time" name="time4_end" value="09:25" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-10 text-center">
+           <p class="alert alert-success">Recess</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time5_start" value="09:25"><br>
+        End
+           <input type="time" name="time5_end" value="10:05" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday5[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday5[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday5[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday5[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday5[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time6_start" value="10:05"><br>
+        End
+           <input type="time" name="time6_end" value="10:45" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday6[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday6[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday6[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday6[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday6[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time7_start" value="10:45"><br>
+        End
+           <input type="time" name="time7_end" value="11:25" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday7[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday7[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday7[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday7[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday7[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time8_start" value="11:25"><br>
+        End
+           <input type="time" name="time8_end" value="12:25" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-10 text-center">
+            <p class="alert alert-success">Lunch Break</p>
+        </div>
+    </div>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+        Start
+           <input type="time" name="time9_start" value="12:25"><br>
+        End
+           <input type="time" name="time9_end" value="13:05" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
             <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday9[year_level_id]")%>
@@ -99,7 +256,10 @@
     <hr>
     <div class="row margintop20">
         <div class="col-sm-2">
-           <p>10AM - 11AM</p>
+        Start
+           <input type="time" name="time10_start" value="13:05"><br>
+        End
+           <input type="time" name="time10_end" value="13:55" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
             <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday10[year_level_id]")%>
@@ -125,7 +285,10 @@
     <hr>
     <div class="row margintop20">
         <div class="col-sm-2">
-           <p>11AM - 12NN</p>
+            Start
+           <input type="time" name="time11_start" value="13:55"><br>
+            End
+           <input type="time" name="time11_end" value="14:35" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
             <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday11[year_level_id]")%>
@@ -151,7 +314,39 @@
     <hr>
     <div class="row margintop20">
         <div class="col-sm-2">
-           <p>1PM - 2PM</p>
+            Start
+           <input type="time" name="time12_start" value="14:35"><br>
+            End
+           <input type="time" name="time12_end" value="15:15" style="margin-left: 6px;">
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday12[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday12[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday12[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday12[section_id]")%>
+        </div>
+        <div class="col-sm-2">
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday12[section_id]")%>
+        </div>
+    </div>
+    <hr>
+    <div class="row margintop20">
+        <div class="col-sm-2">
+            Start
+           <input type="time" name="time13_start" value="15:15"><br>
+            End
+           <input type="time" name="time13_end" value="16:00" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
             <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday13[year_level_id]")%>
@@ -172,84 +367,6 @@
         <div class="col-sm-2">
             <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday13[year_level_id]")%>
             <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday13[section_id]")%>
-        </div>
-    </div>
-    <hr>
-    <div class="row margintop20">
-        <div class="col-sm-2">
-           <p>2PM - 3PM</p>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday14[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday14[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday14[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday14[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday14[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday14[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday14[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday14[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday14[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday14[section_id]")%>
-        </div>
-    </div>
-    <hr>
-    <div class="row margintop20">
-        <div class="col-sm-2">
-           <p>3PM - 4PM</p>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday15[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday15[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday15[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday15[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday15[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday15[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday15[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday15[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday15[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday15[section_id]")%>
-        </div>
-    </div>
-    <hr>
-    <div class="row margintop20">
-        <div class="col-sm-2">
-           <p>4PM - 5PM</p>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday16[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday16[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday16[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday16[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday16[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday16[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday16[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday16[section_id]")%>
-        </div>
-        <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday16[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday16[section_id]")%>
         </div>
     </div>
     <button class="btn btn-md btn-primary">

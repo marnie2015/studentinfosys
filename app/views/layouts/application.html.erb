@@ -45,7 +45,7 @@
         <% if session[:user]["access"] == 1 #admin %>
           <li><a href="/schedules">Schedule</a></li>
         <% elsif session[:user]["access"] == 2 #teacher %>
-          <li><a href="/schedules/<%= Teacher.find_by_user_id(session[:user]["access"]).id %>">Schedule</a></li>
+          <li><a href="/schedules/<%= Teacher.find_by_user_id(session[:user]["id"]).id %>">Schedule</a></li>
         <% else %>
           <li><a href="/schedules/student/<%= @session_student.year_level_id %>/<%= @session_student.section_id %>">Schedule</a></li>
         <% end %>
