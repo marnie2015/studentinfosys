@@ -14,6 +14,13 @@ class GradesController < ApplicationController
   end
   
   def show
+    if session["user"]["access"] == 2
+    t = Teacher.joins(:position, :subject, :room).select("teachers.id, subjects.id subject_id").find_by_user_id(session["user"]["id"])
+    @teacher = t.subject_id
+    else
+    @teacher = 0
+    end
+
     @student = Student.joins(:student_year_sections => [:year_level, :section]).
                         select("students,fname, students.mname, students.lname, students.id, 
                                 sections.description section, 
