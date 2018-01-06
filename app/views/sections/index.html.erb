@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <% if notice %>
+            <div class="alert alert-success"><%= notice %></div>
+          <% end %>
+          <h1 class="page-header">Section
+            <a class="btn btn-primary pull-right" href="/sections/new">
+            <span class="glyphicon glyphicon-plus"></span> Add Section
+          </a>
+          </h1>
+          
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Grade</th>
+                <th colspan="1"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @sections.each do |section| %>
+                <tr>
+                  <td><%= section.description %></td>
+                  <td><%= section.year_level_id %></td>
+                  <td>
+                     <%= link_to edit_section_path(section), :class => "btn btn-primary btn-sm" do %>
+                          <span class="glyphicon glyphicon-pencil"></span> Edit
+                     <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+</div>

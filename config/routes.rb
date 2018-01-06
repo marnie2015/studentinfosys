@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :sections
   resources :rooms
   # start of javascript calls
   get '/save-grade' => 'grades#save_grade'
