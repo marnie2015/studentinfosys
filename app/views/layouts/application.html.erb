@@ -52,6 +52,9 @@
         <% if session[:user]["access"] == 1 %>
         <li><a href="/payments">Payments</a></li>
         <% end %>
+        <% if session[:user]["access"] == 1 %>
+        <li><a href="/sections">Sections</a></li>
+        <% end %>
         <li><a href="/logout">Logout</a></li>
         <% end %>
       </ul>

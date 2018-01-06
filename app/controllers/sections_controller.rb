@@ -1,5 +1,7 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_filter :admin_access_only
+  before_filter :check_access
 
   # GET /sections
   # GET /sections.json
