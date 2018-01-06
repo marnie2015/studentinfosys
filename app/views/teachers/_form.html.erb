@@ -1,4 +1,4 @@
-<%= form_for(@teacher) do |f| %>
+<%= form_for (@teacher), :html => {:multipart => true} do |f| %>
   <% if @teacher.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
@@ -10,42 +10,106 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group">
-    <label for="teacher_teacherid">Teacher ID</label>
-    <input class="form-control" type="text" name="teacher[teacherid]" id="teacher_teacherid" value="<%= params[:id] ? @teacher.teacherid : @teacher_id %>">
+  <div class="col-sm-12">
+    <img src="<%= @teacher.image %>" width="200px">
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.file_field :image, :class => "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, :class => "form-control" %>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="teacher_teacherid">Teacher ID</label>
+      <input class="form-control" type="text" name="teacher[teacherid]" id="teacher_teacherid" value="<%= params[:id] ? @teacher.teacherid : @teacher_id %>">
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, :class => "form-control" %>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="user_name">User name</label>
+      <input class="form-control" type="text" name="user_name" id="user_name" value="<%= @user.user_name %>">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="user_name">User name</label>
-    <input class="form-control" type="text" name="user_name" id="user_name" value="<%= @user.user_name %>">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="user_pass">User pass</label>
+      <input class="form-control" type="password" name="user_pass" id="user_pass" value="<%= params[:id] ? @user.user_pass : @teacher_id %>">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="user_pass">User pass</label>
-    <input class="form-control" type="password" name="user_pass" id="user_pass" value="<%= params[:id] ? @user.user_pass : @teacher_id %>">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :philhealth %>
+      <%= f.text_field :philhealth, :class => "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label "Position" %>
-    <%= select("teacher", "position_id", Position.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[position_id]")%>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :tin %>
+      <%= f.text_field :tin, :class => "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label "Subject" %>
-    <%= select("teacher", "subject_id", Subject.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[subject_id]")%>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :sss %>
+      <%= f.text_field :sss, :class => "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label "Room" %>
-    <%= select("teacher", "room_id", Room.all.collect {|r| [r.description, r.id]}, {}, :class => "form-control", :name => "teacher[room_id]")%>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, :class => "form-control" %>
+    </div>
   </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="teacher_gender">Gender</label>
+      <select class="form-control" name="teacher[gender]" id="teacher_gender">
+        <option value="Male">Male</option>
+        <option value="Female" <%= 'selected' if @teacher.gender == "Female" %>>Female</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label :contact_number %>
+      <%= f.text_field :contact_number, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label "Position" %>
+      <%= select("teacher", "position_id", Position.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[position_id]")%>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label "Subject" %>
+      <%= select("teacher", "subject_id", Subject.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "teacher[subject_id]")%>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <%= f.label "Room" %>
+      <%= select("teacher", "room_id", Room.all.collect {|r| [r.description, r.id]}, {}, :class => "form-control", :name => "teacher[room_id]")%>
+    </div>
+  </div>
+  <div class="col-sm-12">
   <button class="btn btn-md btn-primary">
       Save
   </button>
   <a class="btn btn-primary" href="/teachers">
     <span class="glyphicon glyphicon-arrow-left"></span> Back
   </a>
+  </div>
 <% end %>

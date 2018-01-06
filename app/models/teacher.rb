@@ -13,4 +13,5 @@ class Teacher < ActiveRecord::Base
             rooms.description rm")
   end
 
+  mount_uploader :image, ImageUploader
 end
