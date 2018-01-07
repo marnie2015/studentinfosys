@@ -65,24 +65,24 @@
            <input type="time" name="time2_end" value="08:20" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday2[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday2[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday2_section_id"}, :name => "monday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday2[section_id]", :id => "monday2_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday2[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday2[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday2_section_id"}, :name => "tuesday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday2[section_id]", :id => "tuesday2_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday2[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday2[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday2_section_id"}, :name => "wednesday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday2[section_id]", :id => "wednesday2_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday2[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday2[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday2_section_id"}, :name => "thursday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday2[section_id]", :id => "thursday2_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday2[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday2[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday2_section_id"}, :name => "friday2[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday2[section_id]", :id => "friday2_section_id")%>
         </div>
     </div>
     <hr>
@@ -94,24 +94,24 @@
            <input type="time" name="time3_end" value="09:10" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday3[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday3[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday3_section_id"}, :name => "monday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday3[section_id]", :id => "monday3_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday3[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday3[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday3_section_id"}, :name => "tuesday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday3[section_id]", :id => "tuesday3_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday3[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday3[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday3_section_id"}, :name => "wednesday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday3[section_id]", :id => "wednesday3_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday3[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday3[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday3_section_id"}, :name => "thursday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday3[section_id]", :id => "thursday3_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday3[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday3[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday3_section_id"}, :name => "friday3[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday3[section_id]", :id => "friday3_section_id")%>
         </div>
     </div>
     <hr>
@@ -135,24 +135,24 @@
            <input type="time" name="time5_end" value="10:05" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday5[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday5[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday5_section_id"}, :name => "monday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday5[section_id]", :id => "monday5_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday5[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday5[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday5_section_id"}, :name => "tuesday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday5[section_id]", :id => "tuesday5_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday5[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday5[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday5_section_id"}, :name => "wednesday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday5[section_id]", :id => "wednesday5_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday5[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday5[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday5_section_id"}, :name => "thursday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday5[section_id]", :id => "thursday5_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday5[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday5[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday5_section_id"}, :name => "friday5[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday5[section_id]", :id => "friday5_section_id")%>
         </div>
     </div>
     <hr>
@@ -164,24 +164,24 @@
            <input type="time" name="time6_end" value="10:45" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday6[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday6[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday6_section_id"}, :name => "monday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday6[section_id]", :id => "monday6_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday6[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday6[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday6_section_id"}, :name => "tuesday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday6[section_id]", :id => "tuesday6_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday6[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday6[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday6_section_id"}, :name => "wednesday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday6[section_id]", :id => "wednesday6_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday6[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday6[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday6_section_id"}, :name => "thursday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday6[section_id]", :id => "thursday6_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday6[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday6[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday6_section_id"}, :name => "friday6[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday6[section_id]", :id => "friday6_section_id")%>
         </div>
     </div>
     <hr>
@@ -193,24 +193,24 @@
            <input type="time" name="time7_end" value="11:25" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday7[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday7[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday7_section_id"}, :name => "monday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday7[section_id]", :id => "monday7_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday7[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday7[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday7_section_id"}, :name => "tuesday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday7[section_id]", :id => "tuesday7_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday7[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday7[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday7_section_id"}, :name => "wednesday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday7[section_id]", :id => "wednesday7_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday7[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday7[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday7_section_id"}, :name => "thursday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday7[section_id]", :id => "thursday7_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday7[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday7[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday7_section_id"}, :name => "friday7[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday7[section_id]", :id => "friday7_section_id")%>
         </div>
     </div>
     <hr>
@@ -233,24 +233,24 @@
            <input type="time" name="time9_end" value="13:05" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday9[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday9[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday9_section_id"}, :name => "monday9[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday9[section_id]", :id => "monday9_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday9[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday9[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday9_section_id"}, :name => "tuesday9[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday9[section_id]", :id => "tuesday9_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday9[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday9[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday9_section_id"}, :name => "wednesday9[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday9[section_id]", :id => "wednesday9_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday9[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday9[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday9_section_id"}, :name => "thursday9[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday9[section_id]", :id => "thursday9_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday9[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday9[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday9_section_id"}, :name => "friday9[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday9[section_id]", :id => "friday9_section_id")%>
         </div>
     </div>
     <hr>
@@ -262,24 +262,24 @@
            <input type="time" name="time10_end" value="13:55" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday10[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday10[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday10_section_id"}, :name => "monday10[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday10[section_id]", :id => "monday10_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday10[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday10[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday10_section_id"}, :name => "tuesday10[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday10[section_id]", :id => "tuesday10_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday10[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday10[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday10_section_id"}, :name => "wednesday10[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday10[section_id]", :id => "wednesday10_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday10[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday10[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday10_section_id"}, :name => "thursday10[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday10[section_id]", :id => "thursday10_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday10[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday10[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday10_section_id"}, :name => "friday10[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday10[section_id]", :id => "friday10_section_id")%>
         </div>
     </div>
     <hr>
@@ -291,24 +291,24 @@
            <input type="time" name="time11_end" value="14:35" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday11[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday11[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday11_section_id"}, :name => "monday11[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday11[section_id]", :id => "monday11_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday11[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday11[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday11_section_id"}, :name => "tuesday11[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday11[section_id]", :id => "tuesday11_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday11[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday11[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday11_section_id"}, :name => "wednesday11[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday11[section_id]", :id => "wednesday11_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday11[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday11[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday11_section_id"}, :name => "thursday11[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday11[section_id]", :id => "thursday11_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday11[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday11[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday11_section_id"}, :name => "friday11[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday11[section_id]", :id => "friday11_section_id")%>
         </div>
     </div>
     <hr>
@@ -320,24 +320,24 @@
            <input type="time" name="time12_end" value="15:15" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday12[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday12[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday12_section_id"}, :name => "monday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday12[section_id]", :id => "monday12_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday12[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday12[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday12_section_id"}, :name => "tuesday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday12[section_id]", :id => "tuesday12_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday12[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday12[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday12_section_id"}, :name => "wednesday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday12[section_id]", :id => "wednesday12_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday12[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday12[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday12_section_id"}, :name => "thursday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday12[section_id]", :id => "thursday12_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday12[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday12[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday12_section_id"}, :name => "friday12[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday12[section_id]", :id => "friday12_section_id")%>
         </div>
     </div>
     <hr>
@@ -349,24 +349,24 @@
            <input type="time" name="time13_end" value="16:00" style="margin-left: 6px;">
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday13[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday13[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#monday13_section_id"}, :name => "monday13[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "monday13[section_id]", :id => "monday13_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday13[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday13[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#tuesday13_section_id"}, :name => "tuesday13[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "tuesday13[section_id]", :id => "tuesday13_section_id")%>
         </div>
         <div class="col-sm-2">
-           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday13[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday13[section_id]")%>
+           <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#wednesday13_section_id"}, :name => "wednesday13[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "wednesday13[section_id]", :id => "wednesday13_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday13[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday13[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#thursday13_section_id"}, :name => "thursday13[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "thursday13[section_id]", :id => "thursday13_section_id")%>
         </div>
         <div class="col-sm-2">
-            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday13[year_level_id]")%>
-            <%= select("schedule", "section_id", Section.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday13[section_id]")%>
+            <%= select("schedule", "year_level_id", YearLevel.all.collect {|s| [s.description, s.id]}, {}, :class => "form-control schedule_year_level_id", :data => {:target => "#friday13_section_id"}, :name => "friday13[year_level_id]")%>
+            <%= select("schedule", "section_id", Section.where(:year_level_id => 1).collect {|s| [s.description, s.id]}, {}, :class => "form-control", :name => "friday13[section_id]", :id => "friday13_section_id")%>
         </div>
     </div>
     <button class="btn btn-md btn-primary">

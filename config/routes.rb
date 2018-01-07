@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :sections
-  resources :rooms
+  
   # start of javascript calls
+  get '/get-sections' => 'students#get_sections'
   get '/save-grade' => 'grades#save_grade'
   # end of javascript calls
 
+  resources :sections
+  resources :rooms
   get '/logout' => 'home#logout'
   post '/login' => 'home#login'
   resources :teachers

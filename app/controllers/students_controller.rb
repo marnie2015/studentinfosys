@@ -84,6 +84,10 @@ class StudentsController < ApplicationController
     @student_id = year_now + "-AS-" + get_last_student_id.to_s.rjust(4, '0')
   end
 
+  def get_sections
+    render :inline => '<%= options_from_collection_for_select(Section.where(:year_level_id => ' + params[:grade] + '), :id, :description) %>'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
