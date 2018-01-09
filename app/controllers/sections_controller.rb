@@ -6,7 +6,7 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    @sections = Section.all.order(:year_level_id)
   end
 
   # GET /sections/1
