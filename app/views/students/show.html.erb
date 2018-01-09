@@ -2,11 +2,10 @@
 <% if notice %>
   <div class="alert alert-success"><%= notice %></div>
 <% end %>
-<h1 class="page-header">Student Information 
-    <a class="btn btn-primary pull-right" href="<%= session[:user]["access"] == 1 ? '/students' : '/students-main' %>">
-    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
-</h1>
+<h1 class="page-header">Student Information</h1>
 <%= render 'form' %>
+<a class="btn btn-primary" href="<%= session[:user]["access"] == 1 ? '/students' : '/students-main' %>">
+    <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
 </div></div></div>
 <script>
   $(document).ready(function() {
