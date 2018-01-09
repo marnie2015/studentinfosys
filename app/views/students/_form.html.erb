@@ -29,10 +29,10 @@
 				<%= f.label :status %>
 				<select id="student_status" class="form-control" name="student[status]">
 					<option>Continuing</option>
-					<option>Drop</option>
-					<option>Transfer</option>
-					<option>Returning</option>
-					<option>Stop</option>
+					<option <%= "selected" if @student.status == "Drop" %>>Drop</option>
+					<option <%= "selected" if @student.status == "Transfer" %>>Transfer</option>
+					<option <%= "selected" if @student.status == "Returning" %>>Returning</option>
+					<option <%= "selected" if @student.status == "Stop" %>>Stop</option>
 				</select>
 			</div>
 			<div class="col-sm-2">
