@@ -2,13 +2,13 @@ $(".payments.payform").ready(function() {
 	var total = 0;
 	$("#tuition_fee").change(function() {
 		if ($(this).is(":checked")) {
-			$("#breakdown").append("<tr id='tr_tuition_fee'><td>Tuition Fee</td><td>450</td></tr>");
-			$("#txt_tuition_fee").val(450);
-			total += 450;
+			$("#breakdown").append("<tr id='tr_tuition_fee'><td>Tuition Fee</td><td>5000</td></tr>");
+			$("#txt_tuition_fee").val(5000);
+			total += 5000;
 		} else {
 			$("#tr_tuition_fee").remove();
 			$("#txt_tuition_fee").val(0);
-			total -= 450;
+			total -= 5000;
 		}
 		$("#span_total").text(total);
 	});
