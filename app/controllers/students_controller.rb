@@ -1,16 +1,21 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_filter :admin_access_only, except: [:show]
+  before_filter :admin_access_only, except: [:show, :index]
   before_filter :check_access
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.index_fields.paginate(:page => params[:page], :per_page => 20)
-    if params[:txt_search]
-        @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
-        #@students = Student.index_fields.where("students.lname ilike ?", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "lname"
-        #@students = Student.index_fields.where("year_levels.description ilike ?", "#{params[:txt_search]}").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "year_level"
+    if session[:user]["access"] == 1
+      @students = Student.index_fields.paginate(:page => params[:page], :per_page => 20)
+      if params[:txt_search]
+          @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+      end
+    elsif session[:user]["access"] == 2
+      @students = Student.index_fields.paginate(:page => params[:page], :per_page => 20)
+      if params[:txt_search]
+          @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+      end
     end
   end
 

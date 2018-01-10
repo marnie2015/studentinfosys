@@ -4,7 +4,7 @@
 <% end %>
 <h1 class="page-header">Student Information</h1>
 <%= render 'form' %>
-<a class="btn btn-primary" href="<%= session[:user]["access"] == 1 ? '/students' : '/students-main' %>">
+<a class="btn btn-primary" href="<%= session[:user]["access"] == 1 || session[:user]["access"] == 2 ? '/students' : '/students-main' %>">
     <span class="glyphicon glyphicon-arrow-left"></span> Back</a>
 </div></div></div>
 <script>
