@@ -28,7 +28,9 @@ class Student < ActiveRecord::Base
                           students.lname, 
                           students.address,
                           students.status, 
-                          year_levels.description grade")
+                          year_levels.description grade,
+                          student_year_sections.year_level_id,
+                          student_year_sections.section_id")
                             
     end
 end

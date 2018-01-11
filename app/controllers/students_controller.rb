@@ -12,9 +12,11 @@ class StudentsController < ApplicationController
           @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
       end
     elsif session[:user]["access"] == 2
-      @students = Student.index_fields.paginate(:page => params[:page], :per_page => 20)
+      teacher_id = Teacher.find_by_user_id(session[:user]["id"]).id
+      handled = Schedule.select("year_level_id, section_id").distinct.where("teacher_id = ? and description not in ('flag ceremony', 'lunch break', 'recess')", teacher_id)
+      @students = Student.index_fields.where(:student_year_sections => {:year_level_id => handled.collect {|a| a.year_level_id}, :section_id => handled.collect {|a| a.section_id}}).paginate(:page => params[:page], :per_page => 20)
       if params[:txt_search]
-          @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
+          @students = Student.index_fields.where("students.fname ilike ? or students.lname ilike ?", "#{params[:txt_search]}%", "#{params[:txt_search]}%").where(:student_year_sections => {:year_level_id => handled.collect {|a| a.year_level_id}, :section_id => handled.collect {|a| a.section_id}}).paginate(:page => params[:page], :per_page => 20) if params[:searchby] == "fname"
       end
     end
   end
