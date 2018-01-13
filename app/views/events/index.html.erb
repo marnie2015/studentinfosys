@@ -1,3 +1,9 @@
+<style>
+	.alert-primary {
+		background-color: #4889c1;
+		color: white;
+	}
+</style>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1">
@@ -9,8 +15,24 @@
 				</a>
 				<% end %>
 			</h1>
+			<% ctr = 0%>
 			<% @events.each do |event| %>
-			<div class="panel panel-default">
+			<% ctr+=1 %>
+			<% 
+				if ctr == 5
+					ctr = 0
+					color = "danger"
+				elsif ctr == 4
+					color = "warning"
+				elsif ctr == 3
+					color = "info"
+				elsif ctr == 2
+					color = "success"
+				elsif ctr == 1
+					color = "primary"
+				end
+			%>
+			<div class="panel panel-<%= color %>">
 				<div class="panel-heading">Date Created: <%= event.created_at.strftime("%m/%d/%Y") %>
 					<% if session[:user]["access"] == 1 %>
 						<a class="btn btn-sm btn-primary pull-right" href="/events/<%= event.id %>/edit" style="margin-top: -5px;">
@@ -18,7 +40,7 @@
 						</a>
 					<% end %>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body alert-<%= color %>">
 					<%= event.description %><br/>
 					<div class="row">
 						<div class="col-sm-4">
