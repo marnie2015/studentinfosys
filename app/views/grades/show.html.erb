@@ -702,5 +702,52 @@
                 $("#" + nme).attr("disabled", true);
             });
         });
-    })
+
+        //disable edit button
+        disableBtn("#computer1", ".editcomputer2");
+        disableBtn("#computer2", ".editcomputer3");
+        disableBtn("#computer3", ".editcomputer4");
+
+        disableBtn("#english1", ".editenglish2");
+        disableBtn("#english2", ".editenglish3");
+        disableBtn("#english3", ".editenglish4");
+
+        disableBtn("#epp1", ".editepp2");
+        disableBtn("#epp2", ".editepp3");
+        disableBtn("#epp3", ".editepp4");
+
+        disableBtn("#filipino1", ".editfilipino2");
+        disableBtn("#filipino2", ".editfilipino3");
+        disableBtn("#filipino3", ".editfilipino4");
+
+        disableBtn("#mapeh1", ".editmapeh2");
+        disableBtn("#mapeh2", ".editmapeh3");
+        disableBtn("#mapeh3", ".editmapeh4");
+
+        disableBtn("#mathematics1", ".editmathematics2");
+        disableBtn("#mathematics2", ".editmathematics3");
+        disableBtn("#mathematics3", ".editmathematics4");
+
+        disableBtn("#mother_tongue1", ".editmother_tongue2");
+        disableBtn("#mother_tongue2", ".editmother_tongue3");
+        disableBtn("#mother_tongue3", ".editmother_tongue4");
+
+        disableBtn("#science1", ".editscience2");
+        disableBtn("#science2", ".editscience3");
+        disableBtn("#science3", ".editscience4");
+
+        disableBtn("#sibika1", ".editsibika2");
+        disableBtn("#sibika2", ".editsibika3");
+        disableBtn("#sibika3", ".editsibika4");
+
+        disableBtn("#tle1", ".edittle2");
+        disableBtn("#tle2", ".edittle3");
+        disableBtn("#tle3", ".edittle4");
+    });
+
+    function disableBtn(source, target) {
+        if($(source).val() == "") {
+           $(target).hide();
+        }
+    }
 </script>
