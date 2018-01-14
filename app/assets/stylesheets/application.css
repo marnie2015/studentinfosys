@@ -13,14 +13,15 @@
  *= require_tree .
  *= require_self
  */
-/* .bg {
-	background: url(/assets/logo.jpg);
-    background-position: center center;
+.bg {
+    margin-top: 20px;
+	background: url(/assets/2.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: auto;
+    background-size: cover;
     background-color: #fff;
-} */
+}
 
 table {
 	background-color: white;
